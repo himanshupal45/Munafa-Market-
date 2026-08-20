@@ -29,6 +29,7 @@ import Notes from './pages/PolicyContent/Notes'
 import ComingSoon from './pages/ComingSoon/ComingSoon'
 import UpdateProfile from './components/Header/UpdateProfile/UpdateProfile'
 import Login from './components/Header/Login/Login'
+import Register from './components/Header/Login/Register'
 
 // Auth check function
 const isAuthenticated = () => {
@@ -68,7 +69,7 @@ export default function App() {
         } />
         <Route path="/register" element={
           <PublicRoute>
-            <Login />
+            <Register/>
           </PublicRoute>
         } />
         
