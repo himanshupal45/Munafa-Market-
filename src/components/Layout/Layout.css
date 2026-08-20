@@ -1,0 +1,105 @@
+/* ===== Layout Container ===== */
+.layout {
+  min-height: 100vh;
+  transition: background 0.3s ease;
+}
+
+.layout--light {
+  background: #f2f2f2;
+}
+
+.layout--dark {
+  background: #0d0d0d;
+}
+
+/* ===== Main Content ===== */
+.layout__main {
+  margin-left: 240px;
+  padding-top: 64px;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* ===== Animations ===== */
+.layout__main > * {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .layout__main {
+    margin-left: 0 !important;
+    padding-top: 64px;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout__main {
+    padding-top: 56px;
+  }
+}
+
+/* ===== Smooth scrolling ===== */
+.layout__main {
+  scroll-behavior: smooth;
+}
+
+/* ===== Container for pages ===== */
+.layout__main .page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+@media (max-width: 768px) {
+  .layout__main .page-container {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout__main .page-container {
+    padding: 12px;
+  }
+}
+
+/* ===== Loading skeleton (optional) ===== */
+.layout__main .page-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+/* ===== Page title styles ===== */
+.layout__main .page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary, #1a1a2e);
+  margin-bottom: 8px;
+}
+
+.layout--dark .layout__main .page-title {
+  color: #f0f0f0;
+}
+
+.layout__main .page-subtitle {
+  font-size: 14px;
+  color: var(--text-muted, #888888);
+  margin-bottom: 24px;
+}
+
+.layout--dark .layout__main .page-subtitle {
+  color: #999999;
+}

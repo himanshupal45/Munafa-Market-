@@ -1,0 +1,644 @@
+/* ========================================
+   ADD GAME
+   ======================================== */
+.add-game {
+  padding: 20px 24px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+.add-game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.add-game-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-game-icon {
+  color: var(--accent-orange);
+  width: 22px;
+  height: 22px;
+}
+
+.add-game-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.add-game-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: var(--bg-input);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.add-game-close-btn:hover {
+  background: var(--danger);
+  color: var(--text-white);
+  border-color: var(--danger);
+}
+
+/* ========================================
+   FORM
+   ======================================== */
+.add-game-form {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-label {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.required {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.form-input {
+  padding: 8px 12px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: var(--font-md);
+  background: var(--bg-input);
+  color: var(--text-secondary);
+  outline: none;
+  transition: var(--transition-fast);
+  width: 100%;
+}
+
+.form-input:focus {
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.08);
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
+.form-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   TIME INPUT
+   ======================================== */
+.time-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.time-input-wrapper .time-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.time-input-wrapper .form-input.time-input {
+  padding-left: 34px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.time-input-wrapper .time-placeholder {
+  position: absolute;
+  right: 10px;
+  color: var(--text-muted);
+  font-size: var(--font-sm);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Hide placeholder when time is selected */
+.time-input-wrapper .form-input.time-input:not(:placeholder-shown) ~ .time-placeholder {
+  display: none;
+}
+
+/* Custom time input styling */
+.time-input-wrapper .form-input.time-input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.time-input-wrapper .form-input.time-input::-webkit-datetime-edit {
+  color: var(--text-secondary);
+}
+
+.time-input-wrapper .form-input.time-input::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+}
+
+.time-input-wrapper .form-input.time-input::-webkit-datetime-edit-text {
+  color: var(--text-muted);
+}
+
+.time-input-wrapper .form-input.time-input::-webkit-datetime-edit-hour-field,
+.time-input-wrapper .form-input.time-input::-webkit-datetime-edit-minute-field {
+  color: var(--text-secondary);
+}
+
+/* Firefox */
+.time-input-wrapper .form-input.time-input::-moz-placeholder {
+  color: var(--text-muted);
+}
+
+/* ========================================
+   STATUS OPTIONS
+   ======================================== */
+.status-options {
+  display: flex;
+  gap: 8px;
+}
+
+.status-option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-color);
+  background: var(--bg-input);
+  color: var(--text-secondary);
+  font-size: var(--font-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.status-option:hover {
+  border-color: var(--text-muted);
+  transform: translateY(-1px);
+}
+
+.status-option:active {
+  transform: translateY(0);
+}
+
+.status-option.active {
+  border-color: var(--success);
+  background: rgba(16, 185, 129, 0.08);
+  color: var(--success);
+}
+
+.status-option.active svg {
+  color: var(--success);
+}
+
+.status-option.active-hide {
+  border-color: var(--danger);
+  background: rgba(239, 68, 68, 0.08);
+  color: var(--danger);
+}
+
+.status-option.active-hide svg {
+  color: var(--danger);
+}
+
+/* ========================================
+   FORM ACTIONS
+   ======================================== */
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.btn-cancel {
+  flex: 1;
+  padding: 8px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-input);
+  color: var(--text-secondary);
+  font-size: var(--font-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-cancel:hover {
+  background: var(--border-color);
+  transform: translateY(-1px);
+}
+
+.btn-cancel:active {
+  transform: translateY(0);
+}
+
+.btn-submit {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--accent-orange-gradient);
+  color: var(--text-white);
+  font-size: var(--font-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-orange);
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.35);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET
+   ======================================== */
+@media (max-width: 768px) {
+  .add-game {
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  .add-game-header {
+    padding: 12px 16px;
+  }
+
+  .add-game-title {
+    font-size: 18px;
+  }
+
+  .add-game-form {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn-cancel,
+  .btn-submit {
+    flex: unset;
+    width: 100%;
+  }
+
+  .status-options {
+    flex-direction: column;
+  }
+
+  .time-input-wrapper .time-placeholder {
+    font-size: var(--font-xs);
+  }
+}
+
+/* ========================================
+   RESPONSIVE - SMALL MOBILE
+   ======================================== */
+@media (max-width: 480px) {
+  .add-game {
+    padding: 12px;
+  }
+
+  .add-game-header {
+    padding: 10px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .add-game-header-left {
+    width: 100%;
+  }
+
+  .add-game-close-btn {
+    align-self: flex-end;
+    margin-top: -36px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .add-game-close-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .add-game-title {
+    font-size: 16px;
+  }
+
+  .add-game-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .add-game-form {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .form-label {
+    font-size: var(--font-xs);
+  }
+
+  .form-input {
+    padding: 6px 10px;
+    font-size: var(--font-sm);
+  }
+
+  .time-input-wrapper .form-input.time-input {
+    padding-left: 30px;
+  }
+
+  .time-input-wrapper .time-icon {
+    left: 8px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .time-input-wrapper .time-placeholder {
+    font-size: 10px;
+    right: 8px;
+  }
+
+  .status-option {
+    padding: 6px 10px;
+    font-size: var(--font-xs);
+  }
+
+  .status-option svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .btn-submit,
+  .btn-cancel {
+    padding: 6px 12px;
+    font-size: var(--font-sm);
+  }
+
+  .btn-submit svg,
+  .btn-cancel svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .form-row {
+    gap: 10px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - VERY SMALL
+   ======================================== */
+@media (max-width: 360px) {
+  .add-game {
+    padding: 8px;
+  }
+
+  .add-game-header {
+    padding: 8px 10px;
+  }
+
+  .add-game-title {
+    font-size: 14px;
+  }
+
+  .add-game-form {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .form-input {
+    padding: 5px 8px;
+    font-size: var(--font-xs);
+  }
+
+  .time-input-wrapper .form-input.time-input {
+    padding-left: 26px;
+  }
+
+  .time-input-wrapper .time-icon {
+    left: 6px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .status-option {
+    padding: 5px 8px;
+    font-size: 9px;
+  }
+
+  .btn-submit,
+  .btn-cancel {
+    padding: 5px 10px;
+    font-size: var(--font-xs);
+  }
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.add-game-form {
+  animation: fadeInUp 0.3s ease;
+}
+
+.add-game-header {
+  animation: slideIn 0.3s ease;
+}
+
+/* ========================================
+   DARK THEME SPECIFIC
+   ======================================== */
+.add-game.dark .add-game-header {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+.add-game.dark .add-game-form {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+.add-game.dark .form-input {
+  background: var(--bg-input);
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+}
+
+.add-game.dark .form-input:focus {
+  border-color: var(--accent-orange);
+}
+
+.add-game.dark .status-option {
+  background: var(--bg-input);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.add-game.dark .status-option:hover {
+  border-color: var(--text-muted);
+}
+
+.add-game.dark .btn-cancel {
+  background: var(--bg-input);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.add-game.dark .btn-cancel:hover {
+  background: var(--border-color);
+}
+
+/* ========================================
+   LIGHT THEME SPECIFIC
+   ======================================== */
+.add-game.light .add-game-header {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+.add-game.light .add-game-form {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+.add-game.light .form-input {
+  background: var(--bg-input);
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+}
+
+.add-game.light .form-input:focus {
+  border-color: var(--accent-orange);
+}
+
+.add-game.light .status-option {
+  background: var(--bg-input);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.add-game.light .status-option:hover {
+  border-color: var(--text-muted);
+}
+
+.add-game.light .btn-cancel {
+  background: var(--bg-input);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.add-game.light .btn-cancel:hover {
+  background: var(--border-color);
+}
+
+/* ========================================
+   SCROLLBAR STYLING
+   ======================================== */
+.add-game-form::-webkit-scrollbar {
+  width: 4px;
+}
+
+.add-game-form::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.add-game-form::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: var(--radius-full);
+}
+
+.add-game-form::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
