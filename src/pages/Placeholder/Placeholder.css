@@ -11,19 +11,19 @@
 
 .placeholder-container.light {
   --bg-primary: #ffffff;
-  --text-primary: #1a1a2e;
-  --text-muted: #888888;
-  --border-color: #e8eaf0;
-  --progress-bg: #f0f0f0;
+  --text-primary: var(--text-primary);
+  --text-muted: var(--text-muted);
+  --border-color: var(--border-color);
+  --progress-bg: var(--text-primary);
   --shadow-color: rgba(0, 0, 0, 0.08);
 }
 
 .placeholder-container.dark {
-  --bg-primary: #0a0a0a;
-  --text-primary: #f0f0f0;
-  --text-muted: #999999;
-  --border-color: #222222;
-  --progress-bg: #1a1a1a;
+  --bg-primary: var(--bg-primary, #0a0a0a);
+  --text-primary: var(--text-primary);
+  --text-muted: var(--text-muted);
+  --border-color: var(--border-color);
+  --progress-bg: var(--bg-input);
   --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -41,7 +41,7 @@
 }
 
 .placeholder-container.dark .placeholder-content {
-  background: #111111;
+  background: var(--bg-card);
 }
 
 /* Icon */
@@ -222,7 +222,7 @@
 }
 
 .placeholder-container.dark .progress-bar {
-  background: #222222;
+  background: var(--border-color);
 }
 
 /* Animation for content entrance */

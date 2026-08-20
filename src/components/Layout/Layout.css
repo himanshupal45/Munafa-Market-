@@ -5,11 +5,11 @@
 }
 
 .layout--light {
-  background: #f2f2f2;
+  background: var(--bg-primary);
 }
 
 .layout--dark {
-  background: #0d0d0d;
+  background: var(--bg-primary);
 }
 
 /* ===== Main Content ===== */
@@ -86,20 +86,29 @@
 .layout__main .page-title {
   font-size: 24px;
   font-weight: 700;
-  color: var(--text-primary, #1a1a2e);
+  color: var(--text-primary, var(--text-primary));
   margin-bottom: 8px;
 }
 
 .layout--dark .layout__main .page-title {
-  color: #f0f0f0;
+  color: var(--text-primary);
 }
 
 .layout__main .page-subtitle {
   font-size: 14px;
-  color: var(--text-muted, #888888);
+  color: var(--text-muted, var(--text-muted));
   margin-bottom: 24px;
 }
 
 .layout--dark .layout__main .page-subtitle {
-  color: #999999;
+  color: var(--text-muted);
+}
+/* ===== Dark mode: apply CSS variables globally ===== */
+.layout.dark {
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+}
+
+.layout.dark .layout__main {
+  background: var(--bg-primary);
 }

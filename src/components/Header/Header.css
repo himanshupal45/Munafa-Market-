@@ -17,62 +17,62 @@
 
 /* Light Theme */
 .header--light {
-  background: #ffffff;
-  border-bottom: 1px solid #e8eaf0;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .header--light .header__menu-btn {
-  color: #555555;
+  color: var(--text-secondary);
 }
 
 .header--light .header__search {
-  background: #f5f6fa;
-  border: 1px solid #e8eaf0;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
 }
 
 .header--light .header__search-input {
-  color: #1a1a2e;
+  color: var(--text-primary);
 }
 
 .header--light .header__search-input::placeholder {
-  color: #999999;
+  color: var(--text-muted);
 }
 
 .header--light .header__theme-btn {
-  background: #f5f6fa;
-  border: 1px solid #e8eaf0;
-  color: #555555;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
 }
 
 .header--light .header__bell-btn {
-  color: #555555;
+  color: var(--text-secondary);
 }
 
 .header--light .header__user-name {
-  color: #1a1a2e;
+  color: var(--text-primary);
 }
 
 /* Dark Theme */
 .header--dark {
-  background: #111111;
-  border-bottom: 1px solid #222222;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .header--dark .header__menu-btn {
-  color: #cccccc;
+  color: var(--text-secondary);
 }
 
 .header--dark .header__search {
-  background: #1a1a1a;
-  border: 1px solid #222222;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
 }
 
 .header--dark .header__search-input {
-  color: #f0f0f0;
+  color: var(--text-primary);
 }
 
 .header--dark .header__search-input::placeholder {
-  color: #666666;
+  color: var(--text-muted);
 }
 
 .header--dark .header__theme-btn {
@@ -82,11 +82,11 @@
 }
 
 .header--dark .header__bell-btn {
-  color: #cccccc;
+  color: var(--text-secondary);
 }
 
 .header--dark .header__user-name {
-  color: #f0f0f0;
+  color: var(--text-primary);
 }
 
 /* ========================================
@@ -143,7 +143,7 @@
 }
 
 .header__search-icon {
-  color: #999999;
+  color: var(--text-muted);
   flex-shrink: 0;
 }
 
@@ -215,7 +215,7 @@
   top: 3px;
   right: 3px;
   background: #ff6b00;
-  color: #ffffff;
+  color: var(--bg-card);
   font-size: 9px;
   font-weight: 700;
   border-radius: 999px;
@@ -247,7 +247,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: var(--bg-card);
   box-shadow: 0 2px 8px rgba(255, 107, 0, 0.35);
   transition: all 0.3s;
   cursor: pointer;
@@ -283,7 +283,7 @@
 
 .header__user-role {
   font-size: 11px;
-  color: #888888;
+  color: var(--text-muted);
 }
 
 /* ========================================
@@ -330,7 +330,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: var(--bg-card);
   flex-shrink: 0;
 }
 
@@ -673,7 +673,7 @@
 
 .logout-modal-btn.confirm {
   background: #ef4444;
-  color: #ffffff;
+  color: var(--bg-card);
 }
 
 .logout-modal-btn.confirm:hover {

@@ -33,38 +33,38 @@
 
 /* Light Theme */
 .notification-dropdown--light {
-  background: #ffffff;
-  border-left-color: #e8eaf0;
+  background: var(--bg-card);
+  border-left-color: var(--border-color);
 }
 
 .notification-dropdown--light .notification-dropdown-header {
-  border-bottom: 1px solid #e8eaf0;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .notification-dropdown--light .notif-item:hover {
-  background: #f5f6fa;
+  background: var(--bg-input);
 }
 
 .notification-dropdown--light .notification-dropdown-footer {
-  border-top: 1px solid #e8eaf0;
+  border-top: 1px solid var(--border-color);
 }
 
 /* Dark Theme */
 .notification-dropdown--dark {
-  background: #111111;
-  border-left-color: #222222;
+  background: var(--bg-card);
+  border-left-color: var(--border-color);
 }
 
 .notification-dropdown--dark .notification-dropdown-header {
-  border-bottom: 1px solid #222222;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .notification-dropdown--dark .notif-item:hover {
-  background: #1a1a1a;
+  background: var(--bg-input);
 }
 
 .notification-dropdown--dark .notification-dropdown-footer {
-  border-top: 1px solid #222222;
+  border-top: 1px solid var(--border-color);
 }
 
 /* ========================================
@@ -355,7 +355,7 @@
   top: 2px;
   right: 2px;
   background: #ef4444;
-  color: #ffffff;
+  color: var(--bg-card);
   font-size: 9px;
   font-weight: 700;
   border-radius: 999px;

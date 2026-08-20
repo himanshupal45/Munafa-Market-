@@ -6,14 +6,16 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #f5f6fa;
-  color: #1a1a2e;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* ===== DARK THEME (Orange + Black) ===== */
-body.dark {
-  background: #0d0d0d;
-  color: #f0f0f0;
+/* ===== DARK THEME via layout wrapper ===== */
+body.dark,
+.layout.dark,
+.layout.dark * {
+  color-scheme: dark;
 }
 
 a { text-decoration: none; color: inherit; }

@@ -23,16 +23,16 @@
 
 /* Light Theme */
 .sidebar--light {
-  background: #ffffff;
-  border-right: 1px solid #e8eaf0;
+  background: var(--bg-card);
+  border-right: 1px solid var(--border-color);
 }
 
 .sidebar--light .sidebar__logo-text {
-  color: #1a1a2e;
+  color: var(--text-primary);
 }
 
 .sidebar--light .sidebar__menu-btn {
-  color: #555555;
+  color: var(--text-secondary);
 }
 
 .sidebar--light .sidebar__menu-btn.active {
@@ -46,7 +46,7 @@
 }
 
 .sidebar--light .sidebar__submenu-btn {
-  color: #777777;
+  color: var(--text-muted);
 }
 
 .sidebar--light .sidebar__submenu-btn.active {
@@ -59,25 +59,25 @@
 }
 
 .sidebar--light .sidebar__logo {
-  border-bottom: 1px solid #e8eaf0;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .sidebar--light .sidebar__footer {
-  border-top: 1px solid #e8eaf0;
+  border-top: 1px solid var(--border-color);
 }
 
 /* Dark Theme */
 .sidebar--dark {
-  background: #111111;
-  border-right: 1px solid #222222;
+  background: var(--bg-card);
+  border-right: 1px solid var(--border-color);
 }
 
 .sidebar--dark .sidebar__logo-text {
-  color: #f0f0f0;
+  color: var(--text-primary);
 }
 
 .sidebar--dark .sidebar__menu-btn {
-  color: #cccccc;
+  color: var(--text-secondary);
 }
 
 .sidebar--dark .sidebar__menu-btn.active {
@@ -91,7 +91,7 @@
 }
 
 .sidebar--dark .sidebar__submenu-btn {
-  color: #999999;
+  color: var(--text-muted);
 }
 
 .sidebar--dark .sidebar__submenu-btn.active {
@@ -104,11 +104,11 @@
 }
 
 .sidebar--dark .sidebar__logo {
-  border-bottom: 1px solid #222222;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .sidebar--dark .sidebar__footer {
-  border-top: 1px solid #222222;
+  border-top: 1px solid var(--border-color);
 }
 
 /* ===== Logo ===== */
@@ -130,7 +130,7 @@
 
 .sidebar__close-btn {
   display: none;
-  color: #999;
+  color: var(--text-muted);
   padding: 4px;
   background: none;
   border: none;
@@ -161,12 +161,12 @@
 }
 
 .sidebar__nav::-webkit-scrollbar-thumb {
-  background: #e0e0e0;
+  background: var(--border-color);
   border-radius: 999px;
 }
 
 .sidebar--dark .sidebar__nav::-webkit-scrollbar-thumb {
-  background: #333333;
+  background: var(--border-dark);
 }
 
 .sidebar__menu-item {
