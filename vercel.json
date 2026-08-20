@@ -1,18 +1,12 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "dist/**",
-      "use": "@vercel/static"
-    }
-  ],
   "routes": [
     {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
     },
     {
-      "src": "/(.*)\\.(js|css|png|jpg|jpeg|svg|ico|json)$",
+      "src": "/(.*)\\.(js|css|png|jpg|jpeg|svg|ico|json|woff|woff2|ttf|eot)$",
       "dest": "/$1"
     },
     {
