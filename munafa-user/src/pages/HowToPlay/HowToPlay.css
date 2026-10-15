@@ -1,0 +1,303 @@
+/* =============================================
+   HOW TO PLAY PAGE - Munafa Market Style
+   ============================================= */
+
+.htp-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 24px 16px 60px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.htp-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* =============================================
+   HEADER
+   ============================================= */
+
+.htp-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 24px 16px;
+  background: var(--bg2);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.htp-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, var(--orange-bg), transparent 70%);
+  animation: headerGlow 4s ease-in-out infinite;
+}
+
+.htp-title {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.htp-title span {
+  background: var(--orange-g);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.htp-subtitle {
+  font-size: clamp(14px, 2vw, 18px);
+  color: var(--text2);
+  margin-top: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+/* =============================================
+   STEPS GRID
+   ============================================= */
+
+.htp-steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+/* =============================================
+   STEP CARD
+   ============================================= */
+
+.htp-step-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 28px 24px;
+  text-align: center;
+  position: relative;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.htp-step-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--orange);
+  box-shadow: 0 8px 30px rgba(255, 107, 0, 0.12);
+}
+
+.htp-step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.htp-step-card:hover::before {
+  opacity: 1;
+}
+
+/* Step Number Badge */
+.htp-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.htp-step-number.orange {
+  background: var(--orange-g);
+}
+
+.htp-step-number.navy {
+  background: var(--bg2);
+  border: 2px solid var(--orange);
+  color: var(--orange);
+}
+
+/* Hex Icon */
+.htp-hex-icon {
+  width: 80px;
+  height: 80px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  color: #ffffff;
+  transition: var(--transition);
+}
+
+.htp-step-card:hover .htp-hex-icon {
+  transform: scale(1.08) rotate(-6deg);
+}
+
+.htp-hex-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+.htp-hex-icon.hex-orange {
+  background: var(--orange-g);
+}
+
+.htp-hex-icon.hex-navy {
+  background: linear-gradient(135deg, var(--bg2), var(--border));
+}
+
+/* Step Label */
+.htp-step-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.htp-step-desc {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+
+.htp-footer {
+  margin-top: 32px;
+  padding: 16px 20px;
+  background: var(--orange-bg);
+  border: 1px solid rgba(255, 107, 0, 0.15);
+  border-radius: var(--r-md);
+  text-align: center;
+}
+
+.htp-footer p {
+  color: var(--text2);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* =============================================
+   ANIMATIONS
+   ============================================= */
+
+@keyframes headerGlow {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.6;
+  }
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (min-width: 640px) {
+  .htp-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .htp-steps-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .htp-page {
+    padding: 16px 12px 40px;
+  }
+
+  .htp-header {
+    padding: 18px 12px;
+    margin-bottom: 24px;
+  }
+
+  .htp-title {
+    font-size: 22px;
+  }
+
+  .htp-subtitle {
+    font-size: 13px;
+  }
+
+  .htp-step-card {
+    padding: 20px 16px;
+  }
+
+  .htp-hex-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .htp-hex-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .htp-step-label {
+    font-size: 12px;
+  }
+
+  .htp-step-desc {
+    font-size: 13px;
+  }
+
+  .htp-footer p {
+    font-size: 12px;
+  }
+}
+
+/* =============================================
+   REDUCED MOTION
+   ============================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .htp-header::before {
+    animation: none;
+  }
+
+  .htp-step-card {
+    transition: none;
+  }
+
+  .htp-step-card:hover {
+    transform: none;
+  }
+
+  .htp-hex-icon {
+    transition: none;
+  }
+
+  .htp-step-card:hover .htp-hex-icon {
+    transform: none;
+  }
+}

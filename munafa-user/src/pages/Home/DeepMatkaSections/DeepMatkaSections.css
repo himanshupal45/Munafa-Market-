@@ -1,0 +1,709 @@
+/* =============================================
+   DEEP MATKA SECTIONS - Munafa Market Style
+   Uses Global CSS Variables
+   ============================================= */
+
+.dm-page-wrapper {
+  background-color: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 32px 16px;
+  box-sizing: border-box;
+  color: var(--text);
+}
+
+.max-w-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.dm-section {
+  margin-bottom: 40px;
+}
+
+/* =============================================
+   OUTER CARD WRAPPERS
+   ============================================= */
+
+.white-banner-box {
+  background-color: var(--card);
+  border-radius: var(--r-lg);
+  padding: 32px 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.bg-white-card {
+  background-color: var(--bg);
+  padding: 36px 16px;
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+.border-y {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* =============================================
+   TITLES
+   ============================================= */
+
+.dm-section-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 900;
+  margin: 0 0 24px 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.dark-title { 
+  color: var(--text); 
+}
+
+.red-title { 
+  background: var(--orange-g);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* =============================================
+   HOW TO PLAY COMPONENT
+   ============================================= */
+
+.steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 160px;
+}
+
+.hex-icon {
+  width: 70px;
+  height: 70px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.hex-orange { 
+  background: var(--orange-g); 
+}
+
+.hex-navy { 
+  background: linear-gradient(135deg, var(--bg2), var(--border)); 
+}
+
+.step-number {
+  color: var(--orange);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.step-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text2);
+}
+
+/* =============================================
+   GAME PLAY RATES COMPONENT
+   ============================================= */
+
+.rates-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px 24px;
+  margin-top: 12px;
+}
+
+.rate-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 140px;
+}
+/* =============================================
+   CHART RED CARD - Orange Theme
+   ============================================= */
+
+.chart-red-card {
+  background: var(--orange-g);
+  border-radius: var(--r-md);
+  padding: 20px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #ffffff;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-red-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(255, 107, 0, 0.35);
+}
+
+.chart-red-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+.chart-red-card:hover::before {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.chart-red-card h3 {
+  font-size: 14px;
+  font-weight: 900;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--bg);
+  position: relative;
+  z-index: 1;
+}
+
+/* Light View Button */
+.chart-red-card .view-link-btn.light-btn {
+  background-color: var(--bg2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--r-full);
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(4px);
+  transition: var(--transition);
+  position: relative;
+  z-index: 1;
+}
+
+.chart-red-card .view-link-btn.light-btn:hover {
+  transform: translateX(4px) scale(1.05);
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.15);
+}
+
+.chart-red-card .view-link-btn.light-btn span {
+  transition: var(--transition);
+}
+
+.chart-red-card .view-link-btn.light-btn:hover span {
+  transform: translateX(4px);
+}
+.pin-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 14px;
+  background-color: var(--card);
+  box-shadow: 0 4px 8px rgba(255, 107, 0, 0.2);
+}
+
+.pin-badge::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: var(--orange) transparent transparent transparent;
+}
+
+.rate-icon {
+  font-size: 20px;
+}
+
+.rate-text {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--text2);
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.rate-text strong {
+  display: block;
+  font-weight: 900;
+  color: var(--text);
+}
+
+/* =============================================
+   SUB PILLS HEADER
+   ============================================= */
+
+.sub-header-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text2);
+  margin-bottom: 28px;
+}
+
+/* =============================================
+   GRIDS
+   ============================================= */
+
+.grid-3-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.grid-4-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+
+/* =============================================
+   VIEW BUTTON
+   ============================================= */
+
+.view-link-btn {
+  background-color: var(--card);
+  color: var(--text);
+  border: 1px solid var(--orange);
+  border-radius: var(--r-full);
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.view-link-btn:hover {
+  transform: translateY(-2px);
+  background: var(--orange-bg);
+  border-color: var(--orange2);
+  box-shadow: 0 4px 16px rgba(255, 107, 0, 0.15);
+}
+
+/* =============================================
+   JODI LIST CARDS
+   ============================================= */
+
+.jodi-list-card {
+  border-radius: var(--r-md);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+.card-orange { 
+  background: var(--orange-g); 
+}
+
+.card-navy { 
+  background: linear-gradient(135deg, var(--bg2) 0%, var(--bg) 100%);
+  border: 1px solid var(--border);
+}
+
+.jodi-list-card .card-content {
+  position: relative;
+  z-index: 2;
+  max-width: 65%;
+}
+
+.jodi-list-card h3 {
+  font-size: 15px;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+}
+
+.graphic-circles {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  width: 140px;
+  height: 140px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.graphic-circles .circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.graphic-circles .c1 { width: 70px; height: 70px; bottom: 0; right: 0; }
+.graphic-circles .c2 { width: 45px; height: 45px; bottom: 40px; right: 50px; }
+.graphic-circles .c3 { width: 30px; height: 30px; bottom: 10px; right: 75px; }
+.graphic-circles .square {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  top: 10px;
+  right: 10px;
+  border-radius: 6px;
+}
+
+/* =============================================
+   FREE GAME CARDS
+   ============================================= */
+
+.free-game-card {
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.game-card-header {
+  background: var(--orange-g);
+  color: #ffffff;
+  text-align: center;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 10px;
+  letter-spacing: 0.5px;
+}
+
+.game-card-body {
+  background-color: var(--bg2);
+  text-align: center;
+  padding: 12px;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: var(--orange);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 var(--r-md) var(--r-md);
+}
+
+/* =============================================
+   NAVY / ORANGE GRID CARDS
+   ============================================= */
+
+.chart-navy-card,
+.chart-orange-card {
+  border-radius: var(--r-md);
+  padding: 20px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #ffffff;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.chart-navy-card:hover,
+.chart-orange-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(255, 107, 0, 0.12);
+}
+
+.chart-navy-card { 
+  background-color: var(--bg2);
+  border: 1px solid var(--border);
+}
+
+.chart-orange-card { 
+  background: var(--orange-g);
+}
+
+.chart-navy-card h3,
+.chart-orange-card h3 {
+  font-size: 14px;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.chart-navy-card p,
+.chart-orange-card p {
+  font-size: 12px;
+  opacity: 0.7;
+  margin: 4px 0 0 0;
+}
+
+/* =============================================
+   RESPONSIVE STYLES
+   ============================================= */
+
+@media (min-width: 640px) {
+  .grid-3-col { grid-template-columns: repeat(2, 1fr); }
+  .grid-4-col { grid-template-columns: repeat(2, 1fr); }
+  .rates-grid { gap: 32px 36px; }
+}
+
+@media (min-width: 1024px) {
+  .grid-3-col { grid-template-columns: repeat(3, 1fr); }
+  .grid-4-col { grid-template-columns: repeat(4, 1fr); }
+  .dm-section-title { font-size: 24px; }
+  .steps-container { gap: 40px; }
+}
+
+/* =============================================
+   MOBILE RESPONSIVE
+   ============================================= */
+
+@media (max-width: 480px) {
+  .dm-page-wrapper {
+    padding: 16px 8px;
+  }
+
+  .white-banner-box {
+    padding: 20px 12px;
+    border-radius: var(--r-md);
+  }
+
+  .bg-white-card {
+    padding: 24px 8px;
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+
+  .dm-section-title {
+    font-size: 18px;
+  }
+
+  .step-item {
+    width: 130px;
+  }
+
+  .hex-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 18px;
+  }
+
+  .step-label {
+    font-size: 10px;
+  }
+
+  .rate-item {
+    width: 100px;
+  }
+
+  .pin-badge {
+    width: 44px;
+    height: 44px;
+  }
+
+  .pin-badge::after {
+    border-width: 4px 4px 0 4px;
+    bottom: -6px;
+  }
+
+  .rate-text {
+    font-size: 9px;
+  }
+
+  .jodi-list-card {
+    padding: 16px;
+    min-height: 100px;
+  }
+
+  .jodi-list-card .card-content {
+    max-width: 80%;
+  }
+
+  .jodi-list-card h3 {
+    font-size: 13px;
+  }
+
+  .graphic-circles {
+    width: 100px;
+    height: 100px;
+  }
+
+  .graphic-circles .c1 { width: 50px; height: 50px; }
+  .graphic-circles .c2 { width: 30px; height: 30px; bottom: 30px; right: 35px; }
+  .graphic-circles .c3 { width: 20px; height: 20px; bottom: 8px; right: 55px; }
+  .graphic-circles .square { width: 35px; height: 35px; top: 5px; right: 5px; }
+
+  .chart-navy-card,
+  .chart-orange-card {
+    padding: 14px;
+    min-height: 90px;
+  }
+
+  .chart-navy-card h3,
+  .chart-orange-card h3 {
+    font-size: 12px;
+  }
+
+  .game-card-header {
+    font-size: 11px;
+    padding: 8px;
+  }
+
+  .game-card-body {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .sub-header-pills {
+    font-size: 10px;
+    gap: 10px;
+  }
+
+  .view-link-btn {
+    font-size: 11px;
+    padding: 4px 12px;
+  }
+
+  .grid-3-col,
+  .grid-4-col {
+    gap: 12px;
+  }
+}
+
+/* Extra Small */
+@media (max-width: 360px) {
+  .step-item {
+    width: 100px;
+  }
+
+  .hex-icon {
+    width: 46px;
+    height: 46px;
+    font-size: 14px;
+  }
+
+  .step-label {
+    font-size: 9px;
+  }
+
+  .rate-item {
+    width: 80px;
+  }
+
+  .grid-3-col,
+  .grid-4-col {
+    gap: 10px;
+  }
+
+  .jodi-list-card {
+    padding: 12px;
+  }
+
+  .jodi-list-card h3 {
+    font-size: 11px;
+  }
+}
+/* =============================================
+   SVG ICONS IN HEX
+   ============================================= */
+
+.hex-icon {
+  width: 70px;
+  height: 70px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.hex-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+.hex-orange { 
+  background: var(--orange-g); 
+}
+
+.hex-navy { 
+  background: linear-gradient(135deg, var(--bg2), var(--border)); 
+}
+
+/* =============================================
+   RATE ICON IN PIN BADGE
+   ============================================= */
+
+.pin-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 14px;
+  background-color: var(--card);
+  box-shadow: 0 4px 8px rgba(255, 107, 0, 0.2);
+}
+
+.pin-badge svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--orange);
+  stroke-width: 2;
+}
+
+.pin-badge::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: var(--orange) transparent transparent transparent;
+}

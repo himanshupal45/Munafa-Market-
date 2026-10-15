@@ -1,0 +1,370 @@
+/* ========================================
+   COMING SOON
+   ======================================== */
+.coming-soon {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.coming-soon-container {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  padding: 48px 40px;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+/* ========================================
+   BACKGROUND ELEMENTS
+   ======================================== */
+.cs-bg-elements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.cs-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.06;
+}
+
+.cs-circle-1 {
+  width: 300px;
+  height: 300px;
+  background: var(--accent-orange);
+  top: -100px;
+  right: -100px;
+  animation: floatCircle 8s ease-in-out infinite;
+}
+
+.cs-circle-2 {
+  width: 200px;
+  height: 200px;
+  background: var(--info);
+  bottom: -60px;
+  left: -60px;
+  animation: floatCircle 6s ease-in-out infinite reverse;
+}
+
+.cs-circle-3 {
+  width: 120px;
+  height: 120px;
+  background: var(--success);
+  top: 50%;
+  left: -40px;
+  animation: floatCircle 10s ease-in-out infinite;
+}
+
+.cs-circle-4 {
+  width: 80px;
+  height: 80px;
+  background: var(--purple);
+  bottom: 20%;
+  right: -30px;
+  animation: floatCircle 7s ease-in-out infinite reverse;
+}
+
+@keyframes floatCircle {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(10px, -15px) scale(1.05);
+  }
+  66% {
+    transform: translate(-10px, 10px) scale(0.95);
+  }
+}
+
+/* ========================================
+   CONTENT
+   ======================================== */
+.cs-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Logo */
+.cs-logo-wrapper {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--bg-input);
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 12px;
+  overflow: hidden;
+  transition: var(--transition-fast);
+}
+
+.cs-logo-wrapper:hover {
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 30px rgba(255, 107, 0, 0.15);
+  transform: scale(1.02);
+}
+
+.cs-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Badge */
+.cs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 16px;
+  background: rgba(255, 107, 0, 0.12);
+  color: var(--accent-orange);
+  border-radius: var(--radius-full);
+  font-size: var(--font-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+/* Title */
+.cs-title {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--text-primary);
+  margin: 0 0 12px 0;
+  letter-spacing: 4px;
+  background: var(--accent-orange-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+  background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Subtitle */
+.cs-subtitle {
+  font-size: var(--font-md);
+  color: var(--text-muted);
+  margin: 0 0 32px 0;
+  max-width: 400px;
+}
+
+/* Features */
+.cs-features {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cs-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--bg-input);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.cs-feature-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-orange);
+  box-shadow: var(--shadow-sm);
+}
+
+.cs-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-orange);
+}
+
+/* Notify Button */
+.cs-notify-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 32px;
+  background: var(--accent-orange-gradient);
+  color: var(--text-white);
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: var(--font-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-orange);
+  margin-bottom: 24px;
+}
+
+.cs-notify-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(255, 107, 0, 0.4);
+}
+
+.cs-notify-btn:active {
+  transform: translateY(0);
+}
+
+/* Footer */
+.cs-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.cs-footer svg {
+  color: var(--accent-orange);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .coming-soon-container {
+    padding: 32px 24px;
+  }
+
+  .cs-logo-wrapper {
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+  }
+
+  .cs-title {
+    font-size: 32px;
+  }
+
+  .cs-features {
+    gap: 10px;
+  }
+
+  .cs-feature-item {
+    padding: 6px 14px;
+    font-size: var(--font-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .coming-soon-container {
+    padding: 24px 16px;
+  }
+
+  .cs-logo-wrapper {
+    width: 70px;
+    height: 70px;
+    padding: 8px;
+    margin-bottom: 16px;
+  }
+
+  .cs-title {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  .cs-subtitle {
+    font-size: var(--font-sm);
+  }
+
+  .cs-features {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cs-feature-item {
+    justify-content: center;
+    padding: 8px 14px;
+  }
+
+  .cs-notify-btn {
+    padding: 10px 24px;
+    font-size: var(--font-sm);
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cs-content {
+  animation: fadeInUp 0.6s ease;
+}
+
+.cs-logo-wrapper {
+  animation: fadeInUp 0.6s ease 0.05s both;
+}
+
+.cs-badge {
+  animation: fadeInUp 0.6s ease 0.1s both;
+}
+
+.cs-title {
+  animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+.cs-subtitle {
+  animation: fadeInUp 0.6s ease 0.3s both;
+}
+
+.cs-features {
+  animation: fadeInUp 0.6s ease 0.4s both;
+}
+
+.cs-notify-btn {
+  animation: fadeInUp 0.6s ease 0.5s both;
+}
+
+.cs-footer {
+  animation: fadeInUp 0.6s ease 0.6s both;
+}

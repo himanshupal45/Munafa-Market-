@@ -1,0 +1,833 @@
+/* ============================================
+   ADD POINTS PAGE — Fully Responsive
+   Uses Global CSS Variables
+   ============================================ */
+
+.ap-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding-bottom: 30px;
+  margin-top: 1.5rem;
+  transition: var(--transition);
+}
+
+/* ---------- Header ---------- */
+.ap-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 16px;
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.ap-back-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.ap-back-btn:active { opacity: 0.6; }
+
+.ap-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: var(--transition);
+}
+
+/* Hindi subtitle in title (optional) */
+.ap-title-hi {
+  display: block;
+  font-size: 0.72em;
+  font-weight: 500;
+  color: var(--text2);
+  margin-top: 1px;
+  letter-spacing: 0;
+}
+
+.ap-header-spacer {
+  width: 36px;
+  flex-shrink: 0;
+}
+
+/* ---------- Content ---------- */
+.ap-content {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.ap-icon-wrap {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--orange-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange);
+  margin: 0 auto 4px;
+  transition: var(--transition);
+}
+
+.ap-icon { color: var(--orange); }
+
+.ap-heading {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  text-align: center;
+  transition: var(--transition);
+}
+
+/* Hindi subheading */
+.ap-heading-hi {
+  display: block;
+  font-size: 0.7em;
+  font-weight: 600;
+  color: var(--text2);
+  margin-top: 4px;
+  letter-spacing: 0;
+}
+
+.ap-text {
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+  transition: var(--transition);
+}
+
+/* Hindi subtext */
+.ap-text-hi {
+  display: block;
+  font-size: 0.92em;
+  color: var(--text3);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* ---------- Balance Card ---------- */
+.ap-balance-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 16px;
+  transition: var(--transition);
+}
+
+.ap-balance-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ap-balance-label {
+  font-size: 14px;
+  color: var(--text2);
+  font-weight: 500;
+}
+
+.ap-balance-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* ---------- Quick Amounts ---------- */
+.ap-quick-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.ap-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.ap-quick-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px 8px;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.ap-quick-btn:active { transform: scale(0.96); }
+
+.ap-quick-btn-active {
+  background: var(--orange-bg);
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+/* ---------- Input ---------- */
+.ap-input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ap-input-label {
+  font-size: 13px;
+  color: var(--text2);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+/* Hindi inline label */
+.ap-input-label-hi {
+  font-size: 13px;
+  color: var(--text3);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  display: block;
+  margin-top: 2px;
+}
+
+.ap-input-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 12px 16px;
+  transition: var(--transition);
+}
+
+.ap-input-box:focus-within { border-color: var(--orange); }
+
+.ap-input-prefix {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text2);
+}
+
+.ap-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  font-family: inherit;
+  min-width: 0;
+}
+
+.ap-input-full { width: 100%; }
+
+.ap-input::placeholder { color: var(--text3); }
+
+/* ============================================
+   PAYMENT METHODS — GRID (2x2) — Withdraw jaisa
+   ============================================ */
+.ap-payment-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ap-payment-label {
+  font-size: 13px;
+  color: var(--text2);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+/* Hindi sublabel */
+.ap-payment-label-hi {
+  font-size: 13px;
+  color: var(--text3);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  display: block;
+  margin-top: 2px;
+}
+
+/* Grid: 2 columns on mobile */
+.ap-payment-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* Card: logo top, name middle, radio bottom-left */
+.ap-payment-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 10px 30px;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  color: var(--text);
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  width: 100%;
+  min-height: 130px;
+  font-family: inherit;
+}
+
+.ap-payment-btn:active { transform: scale(0.98); }
+
+.ap-payment-btn-active {
+  border-color: var(--orange);
+  background: var(--orange-bg);
+  box-shadow: 0 0 0 1px var(--orange);
+}
+
+/* Logo */
+.ap-payment-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.ap-payment-logo svg,
+.ap-payment-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* QR method logo — green background */
+.ap-payment-logo-qr {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* Name */
+.ap-payment-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  transition: var(--transition);
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+/* Radio — bottom LEFT corner */
+.ap-payment-radio {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--card);
+  color: #fff;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.ap-payment-radio-active {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+/* ---------- Primary Button ---------- */
+.ap-primary-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--orange-g);
+  color: #fff;
+  border: none;
+  border-radius: var(--r-md);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.ap-primary-btn:active:not(:disabled) {
+  transform: scale(0.98);
+  filter: brightness(1.1);
+}
+
+.ap-primary-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------- Note ---------- */
+.ap-note {
+  font-size: 12px;
+  color: var(--text3);
+  margin: 0;
+  text-align: center;
+  transition: var(--transition);
+  line-height: 1.5;
+}
+
+/* Hindi sub-note */
+.ap-note-hi {
+  display: block;
+  font-size: 0.95em;
+  color: var(--text3);
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 720px) {
+  .ap-page { margin-top: 0; }
+}
+
+/* ---------- Small Phone (max-width: 380px) ---------- */
+@media (max-width: 380px) {
+  .ap-header { padding: 12px; }
+  .ap-title { font-size: 16px; }
+  .ap-title-hi { font-size: 11px; }
+  .ap-content { padding: 20px 16px; gap: 14px; }
+  .ap-heading { font-size: 20px; }
+  .ap-heading-hi { font-size: 13px; }
+  .ap-text { font-size: 13px; }
+  .ap-icon-wrap { width: 80px; height: 80px; }
+  .ap-icon { width: 40px; height: 40px; }
+  .ap-balance-card { padding: 14px; }
+  .ap-balance-label { font-size: 13px; }
+  .ap-balance-value { font-size: 15px; }
+  .ap-quick-btn { font-size: 13px; padding: 10px 6px; }
+  .ap-input-box { padding: 10px 14px; }
+  .ap-input-prefix { font-size: 16px; }
+  .ap-input { font-size: 16px; }
+
+  /* Grid methods — small phone */
+  .ap-payment-list { gap: 8px; }
+  .ap-payment-btn {
+    padding: 14px 8px 26px;
+    min-height: 115px;
+    gap: 8px;
+  }
+  .ap-payment-logo { width: 38px; height: 38px; }
+  .ap-payment-logo svg,
+  .ap-payment-logo img { width: 100% !important; height: 100% !important; }
+  .ap-payment-name { font-size: 12px; }
+  .ap-payment-radio {
+    width: 18px;
+    height: 18px;
+    bottom: 6px;
+    left: 6px;
+  }
+
+  .ap-primary-btn { font-size: 15px; padding: 13px; }
+  .ap-note { font-size: 11px; }
+}
+
+/* ---------- Extra Small (<320px) ---------- */
+@media (max-width: 319px) {
+  .ap-title { font-size: 14px; }
+  .ap-heading { font-size: 18px; }
+  .ap-icon-wrap { width: 70px; height: 70px; }
+  .ap-icon { width: 34px; height: 34px; }
+  .ap-quick-btn { font-size: 12px; padding: 8px 4px; }
+  .ap-payment-name { font-size: 11px; }
+  .ap-input { font-size: 15px; }
+}
+
+/* ---------- Tablet (min-width: 768px) ---------- */
+@media (min-width: 768px) {
+  .ap-header {
+    padding: 16px 24px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ap-title { font-size: 20px; }
+  .ap-content {
+    padding: 36px 32px;
+    gap: 22px;
+    max-width: 700px;
+  }
+  .ap-icon-wrap { width: 110px; height: 110px; }
+  .ap-icon { width: 52px; height: 52px; }
+  .ap-heading { font-size: 26px; }
+  .ap-text { font-size: 15px; }
+  .ap-balance-card { padding: 20px; }
+  .ap-quick-btn { font-size: 15px; padding: 14px 10px; }
+
+  /* Grid methods — 4 columns on tablet+ */
+  .ap-payment-list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .ap-payment-btn {
+    min-height: 150px;
+    padding: 20px 12px 34px;
+  }
+  .ap-payment-logo { width: 56px; height: 56px; }
+  .ap-payment-name { font-size: 14px; }
+  .ap-payment-radio {
+    width: 24px;
+    height: 24px;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .ap-primary-btn { font-size: 17px; padding: 16px; }
+}
+
+/* ---------- Desktop (min-width: 1024px) ---------- */
+@media (min-width: 1024px) {
+  .ap-header { max-width: 1000px; padding: 18px 32px; }
+  .ap-title { font-size: 22px; }
+  .ap-content { max-width: 800px; padding: 44px 40px; }
+  .ap-heading { font-size: 28px; }
+  .ap-text { font-size: 16px; }
+}
+
+/* ---------- Landscape (Mobile) ---------- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .ap-page { margin-top: 0.5rem; }
+  .ap-header { padding: 8px 16px; }
+  .ap-content { padding: 16px; gap: 12px; }
+  .ap-icon-wrap { width: 70px; height: 70px; }
+  .ap-icon { width: 32px; height: 32px; }
+  .ap-heading { font-size: 18px; }
+  .ap-quick-btn { padding: 10px 6px; font-size: 13px; }
+}
+
+/* ============================================
+   UPI MODAL
+   ============================================ */
+.ap-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+  animation: apFadeIn 0.2s ease;
+}
+
+@keyframes apFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.ap-modal {
+  background: #fff;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 24px;
+  animation: apSlideUp 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+  padding-bottom: 24px;
+}
+
+@keyframes apSlideUp {
+  from { transform: translateY(20px) scale(0.96); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Mobile pe bottom sheet */
+@media (max-width: 640px) {
+  .ap-modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+  .ap-modal {
+    border-radius: 24px 24px 0 0;
+    max-height: 92vh;
+  }
+}
+
+.ap-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px 10px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 2;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.ap-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+/* Hindi subtitle in modal */
+.ap-modal-title-hi {
+  display: block;
+  font-size: 0.75em;
+  font-weight: 600;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.ap-modal-close {
+  background: #f1f5f9;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.ap-modal-close:active { background: #e2e8f0; }
+
+.ap-modal-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* QR */
+.ap-qr-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: #fff;
+  border: 2px dashed #e2e8f0;
+  border-radius: 16px;
+  align-self: center;
+}
+
+.ap-modal-hint {
+  text-align: center;
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.ap-modal-hint-hi {
+  display: block;
+  font-size: 0.92em;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.ap-modal-hint-sm {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: -6px 0 0;
+  line-height: 1.5;
+}
+
+.ap-modal-hint-sm-hi {
+  display: block;
+  font-size: 0.95em;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+/* UPI ID copy row */
+.ap-upi-copy-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+.ap-upi-id {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  word-break: break-all;
+}
+
+.ap-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+
+.ap-copy-btn:active { background: #4f46e5; }
+
+/* Open UPI App */
+.ap-upi-open-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+  transition: transform 0.15s;
+  line-height: 1.4;
+}
+
+.ap-upi-open-btn:active:not(:disabled) { transform: scale(0.98); }
+
+.ap-upi-open-btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Divider */
+.ap-modal-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.ap-modal-divider::before,
+.ap-modal-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.ap-modal-divider-hi {
+  display: block;
+  font-size: 0.92em;
+  color: #cbd5e1;
+  margin-top: 2px;
+}
+
+/* Trust row */
+.ap-trust-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #64748b;
+  font-size: 12px;
+  padding-top: 4px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.ap-trust-row-hi {
+  display: block;
+  font-size: 0.95em;
+  color: #94a3b8;
+  margin-top: 1px;
+}
+.ap-qr-image {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+  padding: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.ap-spin {
+  animation: apSpin 1s linear infinite;
+  color: var(--accent-orange, #f97316);
+}
+
+@keyframes apSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@media (max-width: 380px) {
+  .ap-qr-image {
+    width: 180px;
+    height: 180px;
+  }
+}

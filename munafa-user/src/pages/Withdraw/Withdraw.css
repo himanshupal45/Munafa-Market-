@@ -1,0 +1,721 @@
+/* ============================================
+   WITHDRAW PAGE — Fully Responsive
+   Uses Global CSS Variables
+   ============================================ */
+
+.wd-page {
+  min-height: 100vh;
+  background: var(--bg);
+  margin-top: 1.5rem;
+  padding-bottom: 30px;
+  transition: var(--transition);
+}
+
+/* ---------- Header ---------- */
+.wd-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 16px;
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.wd-back-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.wd-back-btn:active {
+  opacity: 0.6;
+}
+
+.wd-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: var(--transition);
+}
+
+.wd-header-spacer {
+  width: 36px;
+  flex-shrink: 0;
+}
+
+/* ---------- Content ---------- */
+.wd-content {
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.wd-icon-wrap {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--orange-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange);
+  margin-bottom: 8px;
+  transition: var(--transition);
+}
+
+.wd-icon {
+  color: var(--orange);
+}
+
+.wd-heading {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  transition: var(--transition);
+}
+
+.wd-text {
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.6;
+  margin: 0;
+  transition: var(--transition);
+}
+
+/* ---------- Info Card ---------- */
+.wd-info-card {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 16px;
+  margin-top: 8px;
+  transition: var(--transition);
+}
+
+.wd-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.wd-info-label {
+  font-size: 14px;
+  color: var(--text2);
+  font-weight: 500;
+}
+
+.wd-info-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* ---------- Input Wrap ---------- */
+.wd-input-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.wd-input-label {
+  font-size: 13px;
+  color: var(--text2);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.wd-input-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 12px 16px;
+  transition: var(--transition);
+}
+
+.wd-input-box:focus-within {
+  border-color: var(--orange);
+}
+
+.wd-input-prefix {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text2);
+}
+
+.wd-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  font-family: inherit;
+  min-width: 0;
+}
+
+.wd-input-full {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.wd-input::placeholder {
+  color: var(--text3);
+  font-weight: 400;
+}
+
+/* ============================================
+   WITHDRAW METHODS — GRID (2x2) layout
+   ============================================ */
+.wd-method-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.wd-method-label {
+  font-size: 13px;
+  color: var(--text2);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+/* Grid: 2 columns on mobile */
+.wd-method-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* Card: logo top, name middle, radio bottom-left */
+.wd-method-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 10px 30px;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  color: var(--text);
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  width: 100%;
+  min-height: 130px;
+}
+
+.wd-method-btn:active {
+  transform: scale(0.98);
+}
+
+.wd-method-btn-active {
+  border-color: var(--orange);
+  background: var(--orange-bg);
+  box-shadow: 0 0 0 1px var(--orange);
+}
+
+/* Logo — bigger, centered top */
+.wd-method-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.wd-method-logo svg,
+.wd-method-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* QR method logo — green background */
+.wd-method-logo-qr {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* Name — wraps to 2 lines */
+.wd-method-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  transition: var(--transition);
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+/* Radio — bottom LEFT corner */
+.wd-method-radio {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--card);
+  color: #fff;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.wd-method-radio-active {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+/* ---------- Primary Button ---------- */
+.wd-primary-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--orange-g);
+  color: #fff;
+  border: none;
+  border-radius: var(--r-md);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 8px;
+}
+
+.wd-primary-btn:active:not(:disabled) {
+  transform: scale(0.98);
+  filter: brightness(1.1);
+}
+
+.wd-primary-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------- Note ---------- */
+.wd-note {
+  font-size: 12px;
+  color: var(--text3);
+  margin: 8px 0 0;
+  transition: var(--transition);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 720px) {
+  .wd-page {
+    margin-top: 0;
+  }
+}
+
+/* ---------- Small Phone (max-width: 380px) ---------- */
+@media (max-width: 380px) {
+  .wd-header {
+    padding: 12px;
+  }
+  .wd-title {
+    font-size: 16px;
+  }
+  .wd-content {
+    padding: 24px 16px;
+    gap: 14px;
+  }
+  .wd-heading {
+    font-size: 20px;
+  }
+  .wd-text {
+    font-size: 13px;
+  }
+  .wd-icon-wrap {
+    width: 80px;
+    height: 80px;
+  }
+  .wd-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .wd-info-card {
+    padding: 14px;
+  }
+  .wd-info-label {
+    font-size: 13px;
+  }
+  .wd-info-value {
+    font-size: 15px;
+  }
+  .wd-input-box {
+    padding: 10px 14px;
+  }
+  .wd-input-prefix {
+    font-size: 16px;
+  }
+  .wd-input {
+    font-size: 16px;
+  }
+  .wd-input-full {
+    font-size: 14px;
+  }
+
+  /* Grid methods — small phone */
+  .wd-method-list {
+    gap: 8px;
+  }
+  .wd-method-btn {
+    padding: 14px 8px 26px;
+    min-height: 115px;
+    gap: 8px;
+  }
+  .wd-method-logo {
+    width: 38px;
+    height: 38px;
+  }
+  .wd-method-logo svg,
+  .wd-method-logo img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .wd-method-name {
+    font-size: 12px;
+  }
+  .wd-method-radio {
+    width: 18px;
+    height: 18px;
+    bottom: 6px;
+    left: 6px;
+  }
+
+  .wd-primary-btn {
+    font-size: 15px;
+    padding: 13px;
+  }
+  .wd-note {
+    font-size: 11px;
+  }
+}
+
+/* ---------- Extra Small (<320px) ---------- */
+@media (max-width: 319px) {
+  .wd-title {
+    font-size: 14px;
+  }
+  .wd-heading {
+    font-size: 18px;
+  }
+  .wd-icon-wrap {
+    width: 70px;
+    height: 70px;
+  }
+  .wd-icon {
+    width: 34px;
+    height: 34px;
+  }
+  .wd-method-name {
+    font-size: 11px;
+  }
+  .wd-input {
+    font-size: 15px;
+  }
+}
+
+/* ---------- Tablet (min-width: 768px) ---------- */
+@media (min-width: 768px) {
+  .wd-header {
+    padding: 16px 24px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .wd-title {
+    font-size: 20px;
+  }
+  .wd-content {
+    padding: 44px 32px;
+    gap: 20px;
+    max-width: 700px;
+  }
+  .wd-icon-wrap {
+    width: 110px;
+    height: 110px;
+  }
+  .wd-icon {
+    width: 52px;
+    height: 52px;
+  }
+  .wd-heading {
+    font-size: 26px;
+  }
+  .wd-text {
+    font-size: 15px;
+  }
+  .wd-info-card {
+    padding: 20px;
+  }
+
+  /* Grid methods — 4 columns on tablet+ */
+  .wd-method-list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .wd-method-btn {
+    min-height: 150px;
+    padding: 20px 12px 34px;
+  }
+  .wd-method-logo {
+    width: 56px;
+    height: 56px;
+  }
+  .wd-method-name {
+    font-size: 14px;
+  }
+  .wd-method-radio {
+    width: 24px;
+    height: 24px;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .wd-primary-btn {
+    font-size: 17px;
+    padding: 16px;
+  }
+}
+
+/* ---------- Desktop (min-width: 1024px) ---------- */
+@media (min-width: 1024px) {
+  .wd-header {
+    max-width: 1000px;
+    padding: 18px 32px;
+  }
+  .wd-title {
+    font-size: 22px;
+  }
+  .wd-content {
+    max-width: 800px;
+    padding: 52px 40px;
+  }
+  .wd-heading {
+    font-size: 28px;
+  }
+  .wd-text {
+    font-size: 16px;
+  }
+}
+
+/* ---------- Landscape (Mobile) ---------- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .wd-page {
+    margin-top: 0.5rem;
+  }
+  .wd-header {
+    padding: 8px 16px;
+  }
+  .wd-content {
+    padding: 20px;
+    gap: 10px;
+  }
+  .wd-icon-wrap {
+    width: 70px;
+    height: 70px;
+  }
+  .wd-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .wd-heading {
+    font-size: 18px;
+  }
+}
+
+/* ============================================
+   QR CODE UPLOAD STYLES
+   ============================================ */
+
+/* Hidden file input */
+.wd-qr-file-input {
+  display: none;
+}
+
+/* Upload box */
+.wd-qr-upload {
+  width: 100%;
+  min-height: 160px;
+  border: 2px dashed var(--border);
+  border-radius: var(--r-md);
+  background: var(--card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px 16px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.wd-qr-upload:hover,
+.wd-qr-upload:active {
+  border-color: var(--orange);
+  background: var(--orange-bg);
+}
+
+.wd-qr-upload-icon {
+  color: var(--orange);
+}
+
+.wd-qr-upload-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.wd-qr-upload-hint {
+  font-size: 12px;
+  color: var(--text3);
+}
+
+/* QR Preview */
+.wd-qr-preview {
+  position: relative;
+  width: 100%;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: var(--transition);
+}
+
+.wd-qr-img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #fff;
+  padding: 8px;
+  border: 1px solid var(--border);
+}
+
+.wd-qr-remove {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #ef4444;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.wd-qr-remove:active {
+  transform: scale(0.9);
+}
+
+.wd-qr-change {
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--orange);
+  background: var(--orange-bg);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.wd-qr-change:active {
+  transform: scale(0.96);
+}
+
+.wd-qr-note {
+  font-size: 12px;
+  color: var(--text2);
+  text-align: center;
+  margin: 4px 0 0;
+  line-height: 1.5;
+  transition: var(--transition);
+}
+
+@media (max-width: 380px) {
+  .wd-qr-upload {
+    min-height: 140px;
+    padding: 18px 12px;
+  }
+  .wd-qr-upload-text {
+    font-size: 13px;
+  }
+  .wd-qr-img {
+    max-width: 180px;
+  }
+}

@@ -1,0 +1,353 @@
+/* ============================================
+   PLAY PAGE — Fully Responsive + Theme Support
+   Max Width: 800px (Consistent)
+   Uses Global CSS Variables
+   ============================================ */
+
+.play-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding-bottom: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+  transition: var(--transition);
+}
+
+/* ---------- Header ---------- */
+.play-header {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 16px;
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.play-back-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.play-back-btn:active {
+  opacity: 0.6;
+}
+
+.play-title {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  letter-spacing: 0.3px;
+  flex: 1;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: var(--transition);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 8px;
+}
+
+.play-wallet {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 500;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.play-wallet-balance {
+  font-size: 16px;
+}
+
+/* ---------- Loading / Error / Empty State ---------- */
+.play-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  gap: 12px;
+}
+
+.play-state-icon {
+  color: var(--red);
+  opacity: 0.9;
+}
+
+.play-state-text {
+  font-size: 15px;
+  color: var(--text2);
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.play-state-muted {
+  color: var(--text3);
+}
+
+.play-state-error {
+  color: var(--red);
+}
+
+.play-state-error .play-state-text {
+  color: var(--red);
+  font-weight: 500;
+}
+
+.play-retry-btn {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: var(--orange-g);
+  color: #fff;
+  border: none;
+  border-radius: var(--r-md);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.play-retry-btn:active {
+  transform: scale(0.96);
+  filter: brightness(1.1);
+}
+
+/* ---------- Grid ---------- */
+.play-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  background: var(--bg);
+  transition: var(--transition);
+}
+
+.play-grid-item {
+  background: var(--bg);
+  border: none;
+  padding: 20px 8px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  min-width: 0;
+  font-family: inherit;
+}
+
+.play-grid-item:nth-child(2n) {
+  border-right: none;
+}
+
+.play-grid-item:active {
+  background: var(--bg2);
+}
+
+/* ---------- Circle with icon ---------- */
+.play-grid-circle {
+  width: 100%;
+  max-width: 140px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: var(--card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+/* Icon SVG responsive */
+.game-icon-svg {
+  width: 55%;
+  height: 55%;
+}
+
+/* ---------- Labels ---------- */
+.play-grid-label {
+  font-size: 15px;
+  color: var(--text);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
+  transition: var(--transition);
+  padding: 0 4px;
+  word-break: break-word;
+}
+
+.play-grid-rate {
+  font-size: 11px;
+  color: var(--text3);
+  font-weight: 500;
+  margin-top: 3px;
+  letter-spacing: 0.2px;
+  transition: var(--transition);
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* ---------- Tablet (768px - 1023px) ---------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .play-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .play-grid-item {
+    padding: 24px 12px 26px;
+  }
+  .play-grid-circle {
+    max-width: 130px;
+  }
+  .play-title {
+    font-size: 18px;
+  }
+}
+
+/* ---------- Large Phone (481px - 767px) ---------- */
+@media (min-width: 481px) and (max-width: 767px) {
+  .play-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .play-grid-circle {
+    max-width: 130px;
+  }
+  .play-grid-item {
+    padding: 22px 10px 24px;
+  }
+}
+
+/* ---------- Normal Phone (381px - 480px) ---------- */
+@media (min-width: 381px) and (max-width: 480px) {
+  .play-grid-circle {
+    max-width: 125px;
+  }
+  .play-grid-label {
+    font-size: 14px;
+  }
+  .play-title {
+    font-size: 17px;
+  }
+}
+
+/* ---------- Small Phone (320px - 380px) ---------- */
+@media (max-width: 380px) {
+  .play-header {
+    padding: 12px;
+    margin-top: 1.5rem;
+  }
+  .play-title {
+    font-size: 15px;
+    padding: 0 4px;
+  }
+  .play-wallet {
+    font-size: 14px;
+    gap: 4px;
+  }
+  .play-wallet-balance {
+    font-size: 14px;
+  }
+  .play-grid-circle {
+    max-width: 105px;
+    margin-bottom: 10px;
+  }
+  .play-grid-item {
+    padding: 16px 6px 20px;
+  }
+  .play-grid-label {
+    font-size: 13px;
+  }
+  .play-grid-rate {
+    font-size: 10px;
+  }
+}
+
+/* ---------- Extra Small (<320px) ---------- */
+@media (max-width: 319px) {
+  .play-title {
+    font-size: 13px;
+  }
+  .play-grid-circle {
+    max-width: 90px;
+  }
+  .play-grid-label {
+    font-size: 12px;
+  }
+  .play-grid-rate {
+    font-size: 9px;
+  }
+}
+
+/* ============================================
+   LANDSCAPE MODE (Mobile)
+   ============================================ */
+@media (max-height: 500px) and (orientation: landscape) {
+  .play-header {
+    margin-top: 0.5rem;
+    padding: 8px 12px;
+  }
+  .play-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .play-grid-item {
+    padding: 12px 6px 14px;
+  }
+  .play-grid-circle {
+    max-width: 90px;
+    margin-bottom: 8px;
+  }
+  .play-grid-label {
+    font-size: 12px;
+  }
+  .play-grid-rate {
+    font-size: 9px;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .play-page,
+  .play-header,
+  .play-title,
+  .play-grid,
+  .play-grid-item,
+  .play-grid-circle,
+  .play-grid-label,
+  .play-grid-rate,
+  .play-wallet,
+  .play-retry-btn {
+    transition: none;
+  }
+
+  .play-retry-btn:active {
+    transform: none;
+  }
+}

@@ -1,0 +1,317 @@
+
+/* ========================================
+   DISAWAR GAME LIST PAGE
+   ======================================== */
+.dgl-page {
+  padding: 24px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: dglFadeIn 0.5s ease;
+}
+
+@keyframes dglFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================
+   BREADCRUMB
+   ======================================== */
+.dgl-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.dgl-breadcrumb-sep { opacity: 0.5; }
+
+/* ========================================
+   PAGE TITLE
+   ======================================== */
+.dgl-page-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px 0;
+}
+
+.dgl-page-title-icon {
+  color: var(--accent-orange);
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+
+
+.dgl-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ========================================
+   CARD
+   ======================================== */
+.dgl-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.dgl-card-top {
+  margin-bottom: 20px;
+}
+
+/* +Add New Button */
+.dgl-add-btn {
+  padding: 10px 20px;
+  background: var(--accent-orange-gradient);
+  color: var(--text-white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.dgl-add-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-orange);
+}
+
+.dgl-add-btn:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   TOOLBAR
+   ======================================== */
+.dgl-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.dgl-toolbar-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.dgl-toolbar-btn {
+  padding: 7px 16px;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.dgl-toolbar-btn:hover {
+  background: var(--accent-orange);
+  color: var(--text-white);
+  border-color: var(--accent-orange);
+  transform: translateY(-1px);
+}
+
+.dgl-toolbar-btn:active {
+  transform: translateY(0);
+}
+
+.dgl-toolbar-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-md);
+  color: var(--text-secondary);
+}
+
+.dgl-search-input {
+  padding: 7px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-md);
+  outline: none;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  width: 200px;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.dgl-search-input:focus {
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
+}
+
+/* ========================================
+   TABLE
+   ======================================== */
+.dgl-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+}
+
+.dgl-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-md);
+}
+
+.dgl-table thead {
+  background: var(--bg-input);
+}
+
+.dgl-table th {
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 700;
+  font-size: var(--font-sm);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.dgl-table td {
+  padding: 12px 14px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.dgl-table tbody tr {
+  transition: var(--transition-fast);
+}
+
+.dgl-table tbody tr:hover {
+  background: var(--bg-input);
+}
+
+.dgl-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.dgl-table-empty {
+  text-align: center !important;
+  padding: 30px 14px !important;
+  color: var(--text-muted);
+  background: var(--bg-input);
+}
+
+/* ========================================
+   PAGINATION
+   ======================================== */
+.dgl-pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.dgl-page-btn {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-input);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: var(--font-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.dgl-page-btn:hover {
+  background: var(--bg-card);
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+}
+
+.dgl-page-btn.active {
+  background: #8b5cf6;
+  color: #ffffff;
+  border-color: #8b5cf6;
+  font-weight: 700;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 600px) {
+  .dgl-page {
+    padding: 16px 12px;
+  }
+
+  .dgl-page-title {
+    font-size: 20px;
+  }
+
+  .dgl-page-title-icon {
+    font-size: 22px;
+  }
+
+  .dgl-breadcrumb {
+    justify-content: flex-start;
+  }
+
+  .dgl-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dgl-toolbar-search {
+    justify-content: flex-end;
+  }
+
+  .dgl-search-input {
+    width: 100%;
+  }
+
+  .dgl-table th,
+  .dgl-table td {
+    padding: 10px;
+    font-size: var(--font-sm);
+  }
+}
+
+/* ========================================
+   PRINT
+   ======================================== */
+@media print {
+  .dgl-toolbar,
+  .dgl-pagination,
+  .dgl-breadcrumb,
+  .dgl-card-top {
+    display: none !important;
+  }
+
+  .dgl-page {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}

@@ -1,0 +1,387 @@
+/* =============================================
+   BANNER SLIDER - Munafa Market Style
+   Uses Global CSS Variables
+   ============================================= */
+
+.banner-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg2);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow);
+}
+
+/* =============================================
+   SLIDE
+   ============================================= */
+
+.banner-slide {
+  display: flex;
+  align-items: stretch;
+  min-height: 420px;
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 0.55s ease;
+  will-change: opacity;
+}
+
+.banner-slide.active {
+  opacity: 1;
+  position: relative;
+  pointer-events: auto;
+}
+
+/* =============================================
+   CONTENT SIDE (Left, 50%)
+   ============================================= */
+
+.banner-content {
+  flex: 0 0 50%;
+  display: flex;
+  align-items: center;
+  padding: 56px 52px;
+  background: var(--bg2);
+}
+
+.banner-content-inner {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Tag */
+.banner-tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  background: var(--orange-bg);
+  border-radius: var(--r-sm);
+  padding: 4px 10px;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 107, 0, 0.15);
+}
+
+/* Subtitle */
+.banner-subtitle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--orange);
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+/* Title */
+.banner-title {
+  margin: 0;
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.banner-title span {
+  background: var(--orange-g);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Description */
+.banner-description {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.65;
+  max-width: 36ch;
+}
+
+/* CTA Button */
+.banner-cta {
+  align-self: flex-start;
+  margin-top: 6px;
+  padding: 12px 28px;
+  background: var(--orange-g);
+  color: var(--text);
+  border: none;
+  border-radius: var(--r-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 2px 12px rgba(255, 107, 0, 0.15);
+}
+
+.banner-cta:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 24px rgba(255, 107, 0, 0.3);
+}
+
+.banner-cta:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* =============================================
+   IMAGE SIDE (Right, 50%)
+   ============================================= */
+
+.banner-image-wrapper {
+  flex: 0 0 50%;
+  overflow: hidden;
+  background: var(--bg);
+  position: relative;
+}
+
+/* Gradient overlay between image and content */
+.banner-image-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(to left, transparent, var(--bg2));
+  pointer-events: none;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+  border-radius: 0 !important;
+  padding: 0;
+}
+
+.banner-slide.active .banner-image {
+  transform: scale(1);
+}
+
+.banner-slide:not(.active) .banner-image {
+  transform: scale(1.04);
+}
+
+/* =============================================
+   DOTS
+   ============================================= */
+
+.banner-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 52px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.banner-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.5;
+}
+
+.banner-dot:hover {
+  opacity: 1;
+  background: var(--orange);
+}
+
+.banner-dot.active {
+  width: 22px;
+  border-radius: 3px;
+  background: var(--orange);
+  opacity: 1;
+}
+
+/* =============================================
+   ANIMATIONS
+   ============================================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.banner-slide.active .banner-content-inner {
+  animation: slideInRight 0.5s ease;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 768px) {
+  .banner-slide {
+    flex-direction: column-reverse;
+    min-height: unset;
+  }
+
+  .banner-content,
+  .banner-image-wrapper {
+    flex: none;
+    width: 100%;
+  }
+
+  .banner-image-wrapper {
+    height: 220px;
+  }
+
+  .banner-image-wrapper::after {
+    display: none;
+  }
+
+  .banner-content {
+    padding: 28px 20px;
+  }
+
+  .banner-content-inner {
+    max-width: 100%;
+  }
+
+  .banner-title {
+    font-size: clamp(20px, 4vw, 26px);
+  }
+
+  .banner-description {
+    font-size: 13px;
+  }
+
+  .banner-cta {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .banner-dots {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 12px;
+  }
+
+  .banner-slide.active .banner-content-inner {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-image-wrapper {
+    height: 160px;
+  }
+
+  .banner-content {
+    padding: 20px 16px;
+  }
+
+  .banner-tag {
+    font-size: 9px;
+    padding: 3px 8px;
+  }
+
+  .banner-subtitle {
+    font-size: 11px;
+  }
+
+  .banner-title {
+    font-size: 18px;
+  }
+
+  .banner-description {
+    font-size: 12px;
+  }
+
+  .banner-cta {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .banner-dots {
+    gap: 6px;
+  }
+
+  .banner-dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .banner-dot.active {
+    width: 16px;
+  }
+
+  .banner-slider {
+    border-radius: var(--r-md);
+  }
+}
+
+/* Extra Small */
+@media (max-width: 360px) {
+  .banner-image-wrapper {
+    height: 130px;
+  }
+
+  .banner-content {
+    padding: 16px 12px;
+  }
+
+  .banner-title {
+    font-size: 16px;
+  }
+
+  .banner-description {
+    font-size: 11px;
+  }
+
+  .banner-cta {
+    padding: 6px 14px;
+    font-size: 11px;
+  }
+}
+
+/* =============================================
+   REDUCED MOTION
+   ============================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .banner-slide,
+  .banner-image,
+  .banner-cta,
+  .banner-dot,
+  .banner-content-inner {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .banner-slide.active .banner-content-inner {
+    animation: none;
+  }
+
+  .banner-cta:hover {
+    transform: none;
+  }
+}

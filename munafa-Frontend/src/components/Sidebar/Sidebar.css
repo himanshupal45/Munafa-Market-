@@ -1,0 +1,516 @@
+.sidebar__logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+ 
+}
+/* ========================================
+   SIDEBAR BASE
+   ======================================== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background: var(--bg-card, #1e1e1e);
+  border-right: 1px solid var(--border-color, #2a2a2a);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: var(--border-color, #2a2a2a);
+  border-radius: 2px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-orange, #ff6b00);
+}
+
+/* Sidebar Light Theme */
+.sidebar--light {
+  background: #ffffff;
+  border-right-color: #e5e7eb;
+}
+
+/* Sidebar Dark Theme */
+.sidebar--dark {
+  background: #1e1e1e;
+  border-right-color: #2a2a2a;
+}
+
+/* ========================================
+   OVERLAY (Mobile)
+   ======================================== */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  backdrop-filter: blur(2px);
+  animation: overlayFadeIn 0.2s ease;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ========================================
+   LOGO
+   ======================================== */
+.sidebar__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid var(--border-color, #2a2a2a);
+  position: relative;
+}
+
+.sidebar--light .sidebar__logo {
+  border-bottom-color: #e5e7eb;
+}
+
+.sidebar__logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.sidebar__logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidebar__logo-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary, #ffffff);
+  white-space: nowrap;
+  flex: 1;
+}
+
+.sidebar--light .sidebar__logo-text {
+  color: #1f2937;
+}
+
+.sidebar__close-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted, #707070);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar__close-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+.sidebar__nav {
+  flex: 1;
+  padding: 12px 12px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: auto;
+}
+
+.sidebar__menu-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__menu-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary, #b0b0b0);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  text-align: left;
+  font-family: inherit;
+  width: 100%;
+  position: relative;
+}
+
+.sidebar--light .sidebar__menu-btn {
+  color: #4b5563;
+}
+
+.sidebar__menu-btn:hover {
+  background: rgba(255, 107, 0, 0.08);
+  color: var(--accent-orange, #ff6b00);
+}
+
+.sidebar--light .sidebar__menu-btn:hover {
+  background: rgba(255, 107, 0, 0.08);
+  color: #ff6b00;
+}
+
+.sidebar__menu-btn.active {
+  background: var(--accent-orange-gradient, linear-gradient(135deg, #ff6b00, #ff9500));
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+}
+
+.sidebar__menu-icon {
+  flex-shrink: 0;
+}
+
+.sidebar__menu-label {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar__menu-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+/* ========================================
+   ✅ NEW BADGE
+   ======================================== */
+.sidebar__menu-badge {
+  margin-left: auto;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.sidebar__menu-badge.new {
+  background: #ef4444;
+  color: #ffffff;
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0);
+    transform: scale(1.05);
+  }
+}
+
+.sidebar--dark .sidebar__menu-badge.new {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+/* Active state ke liye badge ka color change */
+.sidebar__menu-btn.active .sidebar__menu-badge.new {
+  background: #ffffff;
+  color: #3b82f6;
+}
+
+/* ========================================
+   SUBMENU
+   ======================================== */
+.sidebar__submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px 0 4px 42px;
+  margin-left: 8px;
+  border-left: 2px solid var(--border-color, #2a2a2a);
+  animation: submenuSlideDown 0.25s ease;
+}
+
+.sidebar--light .sidebar__submenu {
+  border-left-color: #e5e7eb;
+}
+
+@keyframes submenuSlideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
+
+.sidebar__submenu-btn {
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted, #707070);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  text-align: left;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar--light .sidebar__submenu-btn {
+  color: #6b7280;
+}
+
+.sidebar__submenu-btn:hover {
+  background: rgba(255, 107, 0, 0.08);
+  color: var(--accent-orange, #ff6b00);
+  padding-left: 16px;
+}
+
+.sidebar__submenu-btn.active {
+  background: rgba(255, 107, 0, 0.15);
+  color: var(--accent-orange, #ff6b00);
+  font-weight: 600;
+  position: relative;
+}
+
+.sidebar__submenu-btn.active::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-orange, #ff6b00);
+}
+
+/* ========================================
+   FOOTER (Logout)
+   ======================================== */
+.sidebar__footer {
+  padding: 16px;
+  border-top: 1px solid var(--border-color, #2a2a2a);
+  margin-top: auto;
+}
+
+.sidebar--light .sidebar__footer {
+  border-top-color: #e5e7eb;
+}
+
+.sidebar__logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.sidebar__logout-btn:hover {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  transform: translateY(-1px);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .sidebar--open {
+    transform: translateX(0);
+  }
+
+  .sidebar__close-btn {
+    display: flex;
+  }
+
+  .sidebar__logo-text {
+    font-size: 15px;
+  }
+}
+
+/* ========================================
+   TABLET
+   ======================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+  }
+}
+/* ========================================
+   SUBMENU ITEM (with nested support)
+   ======================================== */
+.sidebar__submenu-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Submenu Button */
+.sidebar__submenu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  text-align: left;
+  font-family: inherit;
+  transition: var(--transition-fast);
+  width: 100%;
+  gap: 8px;
+}
+
+.sidebar__submenu-btn:hover {
+  background: rgba(255, 107, 0, 0.08);
+  color: var(--accent-orange);
+}
+
+.sidebar__submenu-btn.active {
+  background: rgba(255, 107, 0, 0.15);
+  color: var(--accent-orange);
+  font-weight: 600;
+}
+
+/* Submenu Arrow (for nested) */
+.sidebar__submenu-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+  color: inherit;
+}
+
+/* ========================================
+   NESTED SUBMENU (Level 3)
+   ======================================== */
+.sidebar__nested-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px 0 4px 16px;
+  margin-left: 14px;
+  border-left: 2px solid var(--border-color);
+  animation: nestedSlideDown 0.25s ease;
+}
+
+@keyframes nestedSlideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    max-height: 300px;
+    transform: translateY(0);
+  }
+}
+
+/* Nested Submenu Button */
+.sidebar__nested-submenu-btn {
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  text-align: left;
+  font-family: inherit;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar__nested-submenu-btn:hover {
+  background: rgba(255, 107, 0, 0.08);
+  color: var(--accent-orange);
+  padding-left: 16px;
+}
+
+.sidebar__nested-submenu-btn.active {
+  background: rgba(255, 107, 0, 0.15);
+  color: var(--accent-orange);
+  font-weight: 600;
+  position: relative;
+}
+
+.sidebar__nested-submenu-btn.active::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-orange);
+}

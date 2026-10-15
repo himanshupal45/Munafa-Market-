@@ -1,0 +1,450 @@
+/* ============================================
+   PLAY OPTION PAGE — Fully Responsive
+   Max Width: 800px (Consistent)
+   Uses Global CSS Variables
+   ============================================ */
+
+.po-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding-bottom: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+  transition: var(--transition);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ---------- Header ---------- */
+.po-header {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 16px;
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.po-back-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.po-back-btn:active {
+  opacity: 0.6;
+}
+
+.po-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  letter-spacing: 0.3px;
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: var(--transition);
+}
+
+.po-wallet {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 500;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.po-wallet-balance {
+  font-size: 16px;
+}
+
+/* ---------- Form ---------- */
+.po-form {
+  padding: 8px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.po-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.po-label {
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 500;
+  flex-shrink: 0;
+  transition: var(--transition);
+  letter-spacing: 0.2px;
+}
+
+/* ---------- Input Wrap ---------- */
+.po-input-wrap {
+  position: relative;
+  flex: 1;
+  max-width: 62%;
+  display: flex;
+  align-items: center;
+  background: var(--card);
+  border-radius: var(--r-full);
+  padding: 4px 6px 4px 16px;
+  min-height: 42px;
+  transition: var(--transition);
+  box-shadow: 0 1px 3px var(--orange-bg);
+}
+
+.po-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  color: var(--text);
+  padding: 8px 4px;
+  font-family: inherit;
+  min-width: 0;
+}
+
+.po-input::placeholder {
+  color: var(--text3);
+}
+
+/* ---------- Select ---------- */
+.po-select-wrap {
+  padding-right: 6px;
+}
+
+.po-select {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  color: var(--text);
+  padding: 8px 4px;
+  font-family: inherit;
+  font-weight: 500;
+  appearance: none;
+  cursor: pointer;
+  min-width: 0;
+  text-transform: uppercase;
+}
+
+.po-select option {
+  background: var(--card);
+  color: var(--text);
+}
+
+.po-select-icon {
+  color: var(--orange);
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* ---------- Arrow Button inside Input ---------- */
+.po-arrow-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--orange-bg);
+  color: var(--orange);
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.po-arrow-btn:active {
+  background: var(--orange);
+  color: #fff;
+  transform: scale(0.94);
+}
+
+/* ---------- ADD Button ---------- */
+.po-add-btn {
+  margin-top: 4px;
+  width: 100%;
+  padding: 14px;
+  background: var(--orange-g);
+  color: #fff;
+  border: none;
+  border-radius: var(--r-md);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+}
+
+.po-add-btn:active {
+  transform: scale(0.98);
+  filter: brightness(1.1);
+}
+
+/* ---------- Table Header ---------- */
+.po-table-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  transition: var(--transition);
+}
+
+.po-th {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+  transition: var(--transition);
+  letter-spacing: 0.2px;
+}
+
+/* ---------- Table Body ---------- */
+.po-table-body {
+  min-height: 60vh;
+  background: var(--bg);
+  transition: var(--transition);
+}
+
+.po-table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.po-td {
+  font-size: 14px;
+  color: var(--text);
+  text-align: center;
+  transition: var(--transition);
+  word-break: break-word;
+}
+
+.po-td-type {
+  font-size: 12px;
+  color: var(--text2);
+}
+
+.po-empty {
+  min-height: 60vh;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* ---------- Small Phone (320px - 380px) ---------- */
+@media (max-width: 380px) {
+  .po-header {
+    padding: 12px;
+    margin-top: 1.5rem;
+  }
+  .po-title {
+    font-size: 15px;
+  }
+  .po-wallet {
+    font-size: 14px;
+    gap: 4px;
+  }
+  .po-wallet-balance {
+    font-size: 14px;
+  }
+  .po-label {
+    font-size: 12px;
+  }
+  .po-form {
+    padding: 8px 12px 20px;
+    gap: 14px;
+  }
+  .po-input-wrap {
+    max-width: 58%;
+    min-height: 38px;
+    padding-left: 12px;
+  }
+  .po-input,
+  .po-select {
+    font-size: 12px;
+  }
+  .po-arrow-btn {
+    width: 28px;
+    height: 28px;
+  }
+  .po-add-btn {
+    font-size: 16px;
+    padding: 12px;
+  }
+  .po-table-header,
+  .po-table-row {
+    padding: 12px;
+  }
+  .po-th {
+    font-size: 13px;
+  }
+  .po-td {
+    font-size: 12px;
+  }
+  .po-td-type {
+    font-size: 11px;
+  }
+}
+
+/* ---------- Extra Small (<320px) ---------- */
+@media (max-width: 319px) {
+  .po-title {
+    font-size: 13px;
+  }
+  .po-label {
+    font-size: 11px;
+  }
+  .po-input-wrap {
+    max-width: 55%;
+  }
+  .po-add-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .po-th {
+    font-size: 12px;
+  }
+  .po-td {
+    font-size: 11px;
+  }
+}
+
+/* ---------- Large Phone (381px - 480px) ---------- */
+@media (min-width: 381px) and (max-width: 480px) {
+  .po-input-wrap {
+    max-width: 60%;
+  }
+  .po-add-btn {
+    font-size: 17px;
+    padding: 13px;
+  }
+}
+
+/* ---------- Tablet (481px - 767px) ---------- */
+@media (min-width: 481px) and (max-width: 767px) {
+  .po-form {
+    padding: 12px 20px 24px;
+    gap: 18px;
+  }
+  .po-input-wrap {
+    max-width: 60%;
+  }
+  .po-add-btn {
+    font-size: 18px;
+    padding: 15px;
+  }
+}
+
+/* ---------- Tablet (768px+) ---------- */
+@media (min-width: 768px) {
+  .po-form,
+  .po-table-header,
+  .po-table-row {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .po-form {
+    padding: 20px 24px 24px;
+  }
+  .po-label {
+    font-size: 15px;
+  }
+  .po-input,
+  .po-select {
+    font-size: 15px;
+  }
+  .po-input-wrap {
+    max-width: 55%;
+  }
+  .po-th {
+    font-size: 16px;
+  }
+  .po-td {
+    font-size: 15px;
+  }
+  .po-td-type {
+    font-size: 13px;
+  }
+}
+
+/* ---------- Landscape (Mobile) ---------- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .po-page {
+    padding-bottom: 20px;
+  }
+  .po-header {
+    margin-top: 0.5rem;
+    padding: 8px 16px;
+  }
+  .po-form {
+    padding: 8px 16px 12px;
+    gap: 10px;
+  }
+  .po-add-btn {
+    padding: 10px;
+    font-size: 15px;
+  }
+  .po-table-body {
+    min-height: 40vh;
+  }
+  .po-empty {
+    min-height: 40vh;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .po-page,
+  .po-header,
+  .po-title,
+  .po-wallet,
+  .po-input-wrap,
+  .po-arrow-btn,
+  .po-add-btn,
+  .po-table-header,
+  .po-table-body,
+  .po-table-row,
+  .po-td {
+    transition: none;
+  }
+
+  .po-back-btn:active,
+  .po-arrow-btn:active,
+  .po-add-btn:active {
+    transform: none;
+  }
+}

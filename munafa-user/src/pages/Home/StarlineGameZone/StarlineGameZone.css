@@ -1,0 +1,453 @@
+/* =============================================
+   STARLINE GAME ZONE - Munafa Market Style
+   Uses Global CSS Variables
+   ============================================= */
+
+.starline-wrapper {
+  min-height: 100vh;
+  background-color: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+}
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+
+.starline-navbar {
+  background-color: var(--bg2);
+  color: var(--text);
+  padding: 12px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid var(--border);
+}
+
+.starline-navbar .nav-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.starline-navbar .brand-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.starline-navbar .brand-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--orange-g);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.starline-navbar .brand-name {
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  background: var(--orange-g);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.starline-navbar .nav-items {
+  display: none;
+  align-items: center;
+  gap: 24px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.starline-navbar .nav-items a {
+  color: var(--text2);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.starline-navbar .nav-items a:hover {
+  color: var(--orange);
+}
+
+.starline-navbar .download-app-btn {
+  background: var(--orange-g);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.starline-navbar .download-app-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+}
+
+/* =============================================
+   MAIN AREA
+   ============================================= */
+
+.starline-main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+/* =============================================
+   STARLINE TABLE CARD
+   ============================================= */
+
+.starline-card {
+  background-color: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  max-width: 850px;
+  margin: 0 auto 40px auto;
+}
+
+.starline-header {
+  background: var(--orange-g);
+  padding: 16px;
+  text-align: center;
+}
+
+.starline-header h2 {
+  color: #ffffff;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.starline-body {
+  padding: 24px 20px 20px 20px;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.starline-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: center;
+}
+
+.starline-table th {
+  padding: 10px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.starline-table th.navy-th {
+  background-color: var(--bg2);
+  width: 25%;
+  border-right: 1px solid var(--border);
+}
+
+.starline-table th.red-th {
+  background: var(--orange-g);
+  width: 25%;
+}
+
+.starline-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.starline-table td.navy-td {
+  background-color: var(--bg);
+  color: var(--text2);
+}
+
+.starline-table td.red-td {
+  background-color: var(--orange-bg);
+  color: var(--orange);
+}
+
+/* Chart Button */
+.chart-btn-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.view-chart-btn {
+  background: var(--orange-g);
+  color: #ffffff;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.view-chart-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+}
+
+/* =============================================
+   GAME ZONE SECTION
+   ============================================= */
+
+.game-zone-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.zone-title {
+  background: var(--orange-g);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 24px;
+}
+
+.zone-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.zone-card {
+  background-color: var(--card);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100px;
+  transition: var(--transition);
+}
+
+.zone-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange);
+  box-shadow: 0 8px 24px rgba(255, 107, 0, 0.12);
+}
+
+.zone-card-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 16px 0;
+}
+
+.zone-view-btn {
+  background: var(--orange-g);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 0;
+  width: 100%;
+  max-width: 200px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.zone-view-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+}
+
+/* =============================================
+   PROMO BANNER
+   ============================================= */
+
+.promo-banner {
+  background-color: var(--bg2);
+  padding: 32px 16px;
+  border-radius: 12px;
+  margin-top: 20px;
+  border: 1px solid var(--border);
+}
+
+.promo-pills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.promo-pill {
+  background: var(--orange-g);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: var(--r-full);
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  transition: var(--transition);
+}
+
+.promo-pill:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.2);
+}
+
+.whatsapp-btn {
+  background: #25D366;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 10px 20px;
+  border-radius: var(--r-full);
+  text-decoration: none;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 4px;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+  transition: var(--transition);
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+/* =============================================
+   RESPONSIVE STYLES
+   ============================================= */
+
+@media (min-width: 768px) {
+  .starline-navbar .nav-items {
+    display: flex;
+  }
+
+  .zone-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .zone-title {
+    font-size: 26px;
+  }
+}
+
+/* =============================================
+   MOBILE RESPONSIVE
+   ============================================= */
+
+@media (max-width: 480px) {
+  .starline-main {
+    padding: 16px 8px;
+  }
+
+  .starline-navbar .brand-name {
+    font-size: 15px;
+  }
+
+  .starline-navbar .download-app-btn {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+
+  .starline-header h2 {
+    font-size: 16px;
+  }
+
+  .starline-body {
+    padding: 16px 12px 16px 12px;
+  }
+
+  .starline-table {
+    font-size: 11px;
+  }
+
+  .starline-table th,
+  .starline-table td {
+    padding: 6px 8px;
+  }
+
+  .zone-card {
+    padding: 16px;
+    min-height: 80px;
+  }
+
+  .zone-card-title {
+    font-size: 12px;
+  }
+
+  .zone-view-btn {
+    font-size: 11px;
+    padding: 6px 0;
+  }
+
+  .promo-banner {
+    padding: 20px 12px;
+  }
+
+  .promo-pill {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+
+  .whatsapp-btn {
+    font-size: 11px;
+    padding: 8px 16px;
+  }
+
+  .view-chart-btn {
+    font-size: 11px;
+    padding: 6px 16px;
+  }
+}
+
+/* Extra Small */
+@media (max-width: 360px) {
+  .starline-navbar .brand-name {
+    font-size: 13px;
+  }
+
+  .starline-navbar .brand-icon {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+
+  .starline-table {
+    font-size: 10px;
+  }
+
+  .starline-table th,
+  .starline-table td {
+    padding: 4px 6px;
+  }
+
+  .zone-grid {
+    gap: 12px;
+  }
+}

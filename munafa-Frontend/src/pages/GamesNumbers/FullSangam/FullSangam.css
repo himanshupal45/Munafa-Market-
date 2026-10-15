@@ -1,0 +1,243 @@
+
+/* ========================================
+   FULL SANGAM PAGE
+   ======================================== */
+.fs-page {
+  padding: 24px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: fsFadeIn 0.5s ease;
+}
+
+@keyframes fsFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================
+   BREADCRUMB
+   ======================================== */
+.fs-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.fs-breadcrumb-sep { opacity: 0.5; }
+
+/* ========================================
+   PAGE TITLE WITH ICON
+   ======================================== */
+.fs-page-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px 0;
+}
+
+.fs-page-title-icon {
+  color: var(--accent-orange);
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+
+
+.fs-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ========================================
+   MAIN CARD
+   ======================================== */
+.fs-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ========================================
+   SECTION (OpenPana / ClosePana)
+   ======================================== */
+.fs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Section Header (Red Bar) */
+.fs-section-header {
+  background: #c0392b;
+  color: #ffffff;
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.fs-section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================
+   PANAS GRID (12 per row)
+   ======================================== */
+.fs-panas-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.fs-pana-box {
+  min-width: 62px;
+  height: 46px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-orange-gradient);
+  color: var(--text-white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  letter-spacing: 0.5px;
+}
+
+.fs-pana-box:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-orange);
+  z-index: 2;
+}
+
+.fs-pana-box:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1280px) {
+  .fs-panas-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .fs-panas-grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 12px;
+  }
+
+  .fs-pana-box {
+    min-width: 54px;
+    height: 42px;
+    font-size: 14px;
+  }
+
+  .fs-section-title { font-size: 20px; }
+}
+
+@media (max-width: 768px) {
+  .fs-panas-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+  }
+
+  .fs-pana-box {
+    min-width: 48px;
+    height: 40px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .fs-page {
+    padding: 16px 12px;
+  }
+
+  .fs-page-title {
+    font-size: 20px;
+  }
+
+  .fs-page-title-icon {
+    font-size: 22px;
+  }
+
+  .fs-breadcrumb {
+    justify-content: flex-start;
+  }
+
+  .fs-card {
+    padding: 14px;
+    gap: 18px;
+  }
+
+  .fs-section-header {
+    padding: 10px 14px;
+  }
+
+  .fs-section-title { font-size: 18px; }
+
+  .fs-panas-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .fs-pana-box {
+    min-width: 100%;
+    height: 36px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 400px) {
+  .fs-panas-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .fs-pana-box {
+    height: 34px;
+    font-size: 11px;
+  }
+}
+
+/* ========================================
+   PRINT
+   ======================================== */
+@media print {
+  .fs-breadcrumb {
+    display: none !important;
+  }
+
+  .fs-page {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}

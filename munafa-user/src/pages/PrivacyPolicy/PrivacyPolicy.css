@@ -1,0 +1,183 @@
+/* =============================================
+   PRIVACY POLICY PAGE — Uses Global :root Vars
+   ============================================= */
+
+.pp-page {
+  min-height: 100vh;
+  background-color: var(--bg);
+
+  color: var(--text);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.pp-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* =============================================
+   HEADER
+   ============================================= */
+
+.pp-header {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pp-main-title {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 800;
+  color: var(--text);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* =============================================
+   CONTENT
+   ============================================= */
+
+.pp-content {
+  font-size: clamp(14px, 1.8vw, 16px);
+  line-height: 1.75;
+  color: var(--text2);
+}
+
+.pp-content p {
+  margin: 0 0 18px 0;
+  color: var(--text2);
+}
+
+/* =============================================
+   SECTION TITLES
+   ============================================= */
+
+.pp-section-title {
+  font-size: clamp(16px, 2.2vw, 19px);
+  font-weight: 800;
+  color: var(--text);
+  margin: 32px 0 14px 0;
+  letter-spacing: -0.2px;
+  position: relative;
+  padding-left: 14px;
+}
+
+.pp-section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  background: var(--orange-g);
+  border-radius: 2px;
+}
+
+/* =============================================
+   LISTS
+   ============================================= */
+
+.pp-list,
+.pp-links-list {
+  margin: 0 0 18px 0;
+  padding-left: 22px;
+  color: var(--text2);
+}
+
+.pp-list li,
+.pp-links-list li {
+  margin-bottom: 8px;
+  line-height: 1.65;
+}
+
+.pp-list li::marker {
+  color: var(--orange);
+}
+
+.pp-links-list li::marker {
+  color: var(--orange);
+}
+
+/* =============================================
+   LINKS
+   ============================================= */
+
+.pp-links-list a {
+  color: var(--orange);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  border-bottom: 1px solid transparent;
+}
+
+.pp-links-list a:hover {
+  color: var(--orange2);
+  border-bottom-color: var(--orange2);
+}
+
+.pp-inline-link {
+  color: var(--orange);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.pp-inline-link:hover {
+  color: var(--orange2);
+  text-decoration: underline;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 640px) {
+  .pp-container {
+    padding: 24px 16px 60px;
+  }
+
+  .pp-header {
+    margin-bottom: 22px;
+    padding-bottom: 16px;
+  }
+
+  .pp-main-title {
+    font-size: 24px;
+  }
+
+  .pp-content {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .pp-section-title {
+    font-size: 16px;
+    margin: 26px 0 12px 0;
+    padding-left: 12px;
+  }
+
+  .pp-section-title::before {
+    width: 3px;
+    height: 16px;
+  }
+
+  .pp-list,
+  .pp-links-list {
+    padding-left: 20px;
+  }
+}
+
+/* =============================================
+   REDUCED MOTION
+   ============================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .pp-links-list a,
+  .pp-inline-link {
+    transition: none;
+  }
+}

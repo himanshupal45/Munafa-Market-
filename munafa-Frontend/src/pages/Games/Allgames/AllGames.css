@@ -1,0 +1,437 @@
+
+/* ========================================
+   GAME LIST PAGE
+   ======================================== */
+.gl-page {
+  padding: 24px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: glFadeIn 0.5s ease;
+}
+
+@keyframes glFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Breadcrumb */
+.gl-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.gl-breadcrumb-sep { opacity: 0.5; }
+
+/* Page Title */
+.gl-page-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px 0;
+}
+
+.gl-page-title-icon {
+  color: var(--accent-orange);
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+
+
+.gl-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Card */
+.gl-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.gl-card-top {
+  margin-bottom: 20px;
+}
+
+/* Add New Button */
+.gl-add-btn {
+  padding: 10px 20px;
+  background: var(--accent-orange-gradient);
+  color: var(--text-white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.gl-add-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-orange);
+}
+
+.gl-add-btn:active {
+  transform: translateY(0);
+}
+
+/* Toolbar */
+.gl-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.gl-toolbar-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.gl-toolbar-btn {
+  padding: 7px 16px;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.gl-toolbar-btn:hover {
+  background: var(--accent-orange);
+  color: var(--text-white);
+  border-color: var(--accent-orange);
+  transform: translateY(-1px);
+}
+
+.gl-toolbar-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-md);
+  color: var(--text-secondary);
+}
+
+.gl-search-input {
+  padding: 7px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-md);
+  outline: none;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  width: 200px;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.gl-search-input:focus {
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
+}
+
+/* Error */
+.gl-error {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+  border: 1px solid var(--danger);
+}
+
+/* Table */
+.gl-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+}
+
+.gl-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-md);
+}
+
+.gl-table thead {
+  background: var(--bg-input);
+}
+
+.gl-table th {
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 700;
+  font-size: var(--font-sm);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.gl-table td {
+  padding: 12px 14px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.gl-table tbody tr {
+  transition: var(--transition-fast);
+}
+
+.gl-table tbody tr:hover {
+  background: var(--bg-input);
+}
+
+.gl-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.gl-table-empty {
+  text-align: center !important;
+  padding: 30px 14px !important;
+  color: var(--text-muted);
+  background: var(--bg-input);
+}
+
+.gl-game-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Status Cell */
+.gl-status-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Toggle Switch */
+.gl-toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.gl-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.gl-toggle-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d1d5db;
+  transition: 0.3s;
+  border-radius: 24px;
+  border: 1px solid #d1d5db;
+}
+
+.gl-toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #ffffff;
+  transition: 0.3s;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.gl-toggle-switch input:checked + .gl-toggle-slider {
+  background: var(--accent-orange-gradient);
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 10px rgba(255, 107, 0, 0.3);
+}
+
+.gl-toggle-switch input:checked + .gl-toggle-slider:before {
+  transform: translateX(20px);
+}
+
+.gl-toggle-switch:hover .gl-toggle-slider {
+  border-color: var(--accent-orange);
+}
+
+/* Action Buttons */
+.gl-action-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  color: #ffffff;
+}
+
+.gl-edit-btn {
+  background: #4caf50;
+}
+
+.gl-edit-btn:hover {
+  background: #43a047;
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.gl-delete-btn {
+  background: #ef4444;
+}
+
+.gl-delete-btn:hover {
+  background: #dc2626;
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Pagination */
+.gl-pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.gl-page-btn {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-input);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: var(--font-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.gl-page-btn:hover:not(:disabled) {
+  background: var(--bg-card);
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+}
+
+.gl-page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.gl-page-btn.active {
+  background: #8b5cf6;
+  color: #ffffff;
+  border-color: #8b5cf6;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .gl-page {
+    padding: 16px 12px;
+  }
+
+  .gl-page-title {
+    font-size: 20px;
+  }
+
+  .gl-page-title-icon {
+    font-size: 22px;
+  }
+
+  .gl-breadcrumb {
+    justify-content: flex-start;
+  }
+
+  .gl-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gl-toolbar-search {
+    justify-content: flex-end;
+  }
+
+  .gl-search-input {
+    width: 100%;
+  }
+
+  .gl-table th,
+  .gl-table td {
+    padding: 10px;
+    font-size: var(--font-sm);
+  }
+
+  .gl-status-cell {
+    gap: 6px;
+  }
+
+  .gl-toggle-switch {
+    width: 38px;
+    height: 22px;
+  }
+
+  .gl-toggle-slider:before {
+    height: 16px;
+    width: 16px;
+  }
+
+  .gl-toggle-switch input:checked + .gl-toggle-slider:before {
+    transform: translateX(16px);
+  }
+
+  .gl-action-btn {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* Print */
+@media print {
+  .gl-toolbar,
+  .gl-pagination,
+  .gl-breadcrumb,
+  .gl-card-top,
+  .gl-status-cell {
+    display: none !important;
+  }
+
+  .gl-page {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}

@@ -1,0 +1,64 @@
+/* =============================================
+   APP LAYOUT
+   ============================================= */
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.app-main {
+  flex: 1;
+  padding-top: 70px; /* Height of navbar */
+  padding-bottom: 20px;
+  animation: fadeUp 0.3s ease;
+}
+
+/* =============================================
+   PAGE TRANSITIONS
+   ============================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 768px) {
+  .app-main {
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-main {
+    padding-top: 56px;
+  }
+}
+/* =============================================
+   APP LAYOUT
+   ============================================= */
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+  transition: background-color 0.3s ease;
+}
+
+.app-main {
+  flex: 1;
+  padding-top: 70px;
+}

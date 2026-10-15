@@ -1,0 +1,637 @@
+/* ============================================
+   WALLET HISTORY PAGE — Fully Responsive
+   Uses Global CSS Variables
+   ============================================ */
+
+.wh-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding-bottom: 30px;
+  transition: var(--transition);
+}
+
+/* ---------- Header ---------- */
+/* ✅ HEADER SAME — koi change nahi */
+.wh-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 16px;
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.wh-back-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.wh-back-btn:active {
+  opacity: 0.6;
+}
+
+.wh-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: var(--transition);
+}
+
+.wh-header-spacer {
+  width: 36px;
+  flex-shrink: 0;
+}
+
+/* ---------- Content (purani, still supported) ---------- */
+.wh-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.wh-icon-wrap {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--orange-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange);
+  transition: var(--transition);
+}
+
+.wh-icon {
+  color: var(--orange);
+}
+
+.wh-heading {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  transition: var(--transition);
+}
+
+.wh-text {
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.6;
+  margin: 0;
+  transition: var(--transition);
+}
+
+/* ============================================
+   ⬇️ NAYI CLASSES — JO JSX ME HAIN
+   ============================================ */
+
+/* ---------- Hero (Balance Section) ---------- */
+.wh-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px 24px;
+  gap: 8px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.wh-hero-icon-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--orange-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange);
+  transition: var(--transition);
+}
+
+.wh-hero-icon {
+  color: var(--orange);
+  width: 38px;
+  height: 38px;
+}
+
+.wh-balance-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--orange);
+  letter-spacing: 0.5px;
+  margin: 0;
+  transition: var(--transition);
+}
+
+.wh-balance-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.2px;
+  margin: 0;
+  transition: var(--transition);
+}
+
+/* ---------- Summary (Credit / Debit / Bets) ---------- */
+.wh-summary {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.wh-summary-item {
+  flex: 1;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  transition: var(--transition);
+}
+
+.wh-summary-icon {
+  color: var(--orange);
+  width: 14px;
+  height: 14px;
+}
+
+.wh-summary-label {
+  font-size: 10px;
+  opacity: 0.85;
+  font-weight: 500;
+  color: var(--text2);
+}
+
+.wh-summary-value {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ---------- Tabs (All / Credit / Debit) ---------- */
+.wh-tabs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 8px 0 12px;
+  padding: 0 16px;
+}
+
+.wh-tab {
+  padding: 7px 16px;
+  border-radius: var(--r-full);
+  border: 1.5px solid var(--orange);
+  background: transparent;
+  color: var(--orange);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wh-tab:hover {
+  background: var(--orange-bg);
+}
+
+.wh-tab.active {
+  background: var(--orange);
+  color: #ffffff;
+  border-color: var(--orange);
+  box-shadow: var(--shadow);
+}
+
+.wh-tab-count {
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: var(--r-full);
+  padding: 1px 7px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* ---------- Panel ---------- */
+.wh-panel {
+  flex: 1;
+  padding: 0;
+  transition: var(--transition);
+}
+
+/* ---------- States (Loading / Error / Empty) ---------- */
+.wh-state {
+  text-align: center;
+  padding: 40px 16px;
+  color: var(--text2);
+}
+
+.wh-state p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--text2);
+}
+
+.wh-error {
+  color: var(--red);
+}
+
+.wh-error p {
+  color: var(--red);
+}
+
+.wh-retry-btn {
+  margin-top: 10px;
+  padding: 8px 18px;
+  border-radius: var(--r-md);
+  border: none;
+  background: var(--orange);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.wh-retry-btn:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+.wh-spinner {
+  width: 34px;
+  height: 34px;
+  border: 3px solid var(--border);
+  border-top-color: var(--orange);
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: wh-spin 0.8s linear infinite;
+}
+
+@keyframes wh-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Transaction List ---------- */
+.wh-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.wh-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--r-md);
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.wh-item:hover {
+  border-color: var(--orange);
+}
+
+.wh-item-bet {
+  border-left: 3px solid var(--red);
+}
+
+.wh-item-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--r-full);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.wh-item-body {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.wh-item-note {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+  word-break: break-word;
+  line-height: 1.35;
+}
+
+.wh-item-date {
+  font-size: 12px;
+  color: var(--text2);
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.wh-item-tag {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: var(--r-full);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.wh-item-amount {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.wh-amount {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.wh-amount.credit {
+  color: var(--green);
+}
+
+.wh-amount.debit {
+  color: var(--red);
+}
+
+.wh-item-balance {
+  font-size: 11px;
+  color: var(--text2);
+  margin-top: 2px;
+}
+
+/* ---------- Source Tag Colors ---------- */
+.wh-tag-bet {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--red);
+}
+
+.wh-tag-win {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--green);
+}
+
+.wh-tag-admin {
+  background: var(--orange-bg);
+  color: var(--orange);
+}
+
+.wh-tag-warn {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.wh-tag-default {
+  background: var(--bg2);
+  color: var(--text2);
+}
+
+.wh-item-icon.wh-tag-bet {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--red);
+}
+
+.wh-item-icon.wh-tag-win {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--green);
+}
+
+.wh-item-icon.wh-tag-admin {
+  background: var(--orange-bg);
+  color: var(--orange);
+}
+
+.wh-item-icon.wh-tag-warn {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.wh-item-icon.wh-tag-default {
+  background: var(--bg2);
+  color: var(--text2);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* ---------- Small Phone (320px - 380px) ---------- */
+@media (max-width: 380px) {
+  .wh-header {
+    margin-top: 1rem;
+    padding: 12px;
+  }
+  .wh-title {
+    font-size: 16px;
+  }
+  .wh-hero {
+    padding: 16px 16px 20px;
+    gap: 6px;
+  }
+  .wh-hero-icon-wrap {
+    width: 70px;
+    height: 70px;
+  }
+  .wh-hero-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .wh-balance-value {
+    font-size: 26px;
+  }
+  .wh-balance-label {
+    font-size: 13px;
+  }
+  .wh-summary-item {
+    padding: 7px 5px;
+  }
+  .wh-summary-label {
+    font-size: 9px;
+  }
+  .wh-summary-value {
+    font-size: 12px;
+  }
+  .wh-tab {
+    padding: 6px 13px;
+    font-size: 12px;
+  }
+  .wh-content {
+    padding: 0 14px 30px;
+  }
+  .wh-item {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+  .wh-item-note {
+    font-size: 13px;
+  }
+  .wh-item-icon {
+    width: 34px;
+    height: 34px;
+  }
+  .wh-amount {
+    font-size: 14px;
+  }
+}
+
+/* ---------- Extra Small (<320px) ---------- */
+@media (max-width: 319px) {
+  .wh-title {
+    font-size: 14px;
+  }
+  .wh-hero-icon-wrap {
+    width: 62px;
+    height: 62px;
+  }
+  .wh-hero-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .wh-balance-value {
+    font-size: 22px;
+  }
+  .wh-balance-label {
+    font-size: 12px;
+  }
+  .wh-tab {
+    padding: 5px 11px;
+    font-size: 11px;
+  }
+  .wh-item-note {
+    font-size: 12px;
+  }
+}
+
+/* ---------- Tablet (768px+) ---------- */
+@media (min-width: 768px) {
+  .wh-header {
+    padding: 16px 24px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem;
+  }
+  .wh-title {
+    font-size: 20px;
+  }
+  .wh-hero {
+    padding: 28px 32px 32px;
+    gap: 10px;
+  }
+  .wh-hero-icon-wrap {
+    width: 96px;
+    height: 96px;
+  }
+  .wh-hero-icon {
+    width: 46px;
+    height: 46px;
+  }
+  .wh-balance-value {
+    font-size: 38px;
+  }
+  .wh-balance-label {
+    font-size: 16px;
+  }
+  .wh-summary {
+    max-width: 560px;
+    gap: 12px;
+  }
+  .wh-summary-item {
+    padding: 10px 8px;
+  }
+  .wh-summary-label {
+    font-size: 11px;
+  }
+  .wh-summary-value {
+    font-size: 14px;
+  }
+  .wh-content {
+    max-width: 800px;
+    padding: 0 24px 40px;
+  }
+}
+
+/* ---------- Desktop (1024px+) ---------- */
+@media (min-width: 1024px) {
+  .wh-header {
+    max-width: 1000px;
+    padding: 18px 32px;
+  }
+  .wh-title {
+    font-size: 22px;
+  }
+  .wh-content {
+    max-width: 900px;
+  }
+  .wh-balance-value {
+    font-size: 42px;
+  }
+  .wh-balance-label {
+    font-size: 17px;
+  }
+}
+
+/* ---------- Landscape (Mobile) ---------- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .wh-header {
+    margin-top: 0.5rem;
+    padding: 8px 16px;
+  }
+  .wh-hero {
+    padding: 12px 16px 16px;
+    gap: 6px;
+  }
+  .wh-hero-icon-wrap {
+    width: 60px;
+    height: 60px;
+  }
+  .wh-hero-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .wh-balance-value {
+    font-size: 24px;
+  }
+  .wh-summary {
+    max-width: 400px;
+    margin-top: 4px;
+  }
+}

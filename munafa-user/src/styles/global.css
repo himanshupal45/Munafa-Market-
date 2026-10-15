@@ -1,0 +1,198 @@
+/* =============================================
+   GLOBAL BASE — Dark & Light Theme Support
+   ============================================= */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =============================================
+   DARK THEME (Default)
+   ============================================= */
+
+:root,
+[data-theme="dark"] {
+  --bg:        #0f0f0f;
+  --bg2:       #1a1a1a;
+  --card:      #1e1e1e;
+  --border:    #2a2a2a;
+  --orange:    #ff6b00;
+  --orange2:   #ff8c00;
+  --orange-g:  linear-gradient(135deg, #ff6b00, #ff8c00);
+  --orange-bg: rgba(255, 107, 0, 0.12);
+  --text:      #ffffff;
+  --text2:     #b0b0b0;
+  --text3:     #dddddd;
+  --green:     #22c55e;
+  --red:       #ef4444;
+  --r-sm:      8px;
+  --r-md:      12px;
+  --r-lg:      16px;
+  --r-xl:      20px;
+  --r-full:    9999px;
+  --shadow:    0 4px 24px rgba(0, 0, 0, 0.45);
+  --transition: all 0.2s ease;
+  --icon:      #ff6b00;
+}
+
+/* =============================================
+   LIGHT THEME
+   ============================================= */
+
+[data-theme="light"] {
+  --bg:        #f7f8fa;
+  --bg2:       #ffffff;
+  --card:      #ffffff;
+  --border:    #e2e8f0;
+  --orange:    #ff6b00;
+  --orange2:   #ff8c00;
+  --orange-g:  linear-gradient(135deg, #ff6b00, #ff8c00);
+  --orange-bg: rgba(255, 107, 0, 0.10);
+  --text:      #1a202c;
+  --text2:     #4a5568;
+  --text3:     #000000;
+  --green:     #16a34a;
+  --red:       #dc2626;
+  --r-sm:      8px;
+  --r-md:      12px;
+  --r-lg:      16px;
+  --r-xl:      20px;
+  --r-full:    9999px;
+  --shadow:    0 4px 24px rgba(0, 0, 0, 0.08);
+  --transition: all 0.2s ease;
+  --icon:      #000000;
+}
+
+/* =============================================
+   BASE STYLES
+   ============================================= */
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  background: none;
+}
+
+input, select, textarea {
+  outline: none;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =============================================
+   SCROLLBAR
+   ============================================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--orange);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--orange2);
+}
+
+/* =============================================
+   SPINNER
+   ============================================= */
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border);
+  border-top-color: var(--orange);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* =============================================
+   UTILITY ANIMATIONS
+   ============================================= */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.fade-up  { animation: fadeUp  0.35s ease forwards; }
+.fade-in  { animation: fadeIn  0.3s  ease forwards; }
+.scale-in { animation: scaleIn 0.3s  ease forwards; }
+
+/* =============================================
+   APP LAYOUT
+   ============================================= */
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+  transition: background-color 0.3s ease;
+}
+
+.app-main {
+  flex: 1;
+  padding-top: 40px;
+}
+
+/* =============================================
+   SAFE AREA (Notched Phones)
+   ============================================= */
+
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .safe-bottom {
+    padding-bottom: calc(8px + env(safe-area-inset-bottom));
+  }
+}

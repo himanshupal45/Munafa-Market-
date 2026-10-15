@@ -1,0 +1,252 @@
+/* ============================================
+   HOME ACTIONS — Withdraw + WhatsApp + Call + Add Points
+   Fully Responsive + Theme Support
+   Uses Global CSS Variables
+   ============================================ */
+
+.ha-wrapper {
+  width: 100%;
+  padding: 12px 14px 16px;
+  background: transparent;
+  transition: var(--transition);
+}
+
+/* ---------- Actions Row ---------- */
+.ha-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+/* ---------- Label + Icon button (Withdraw / Add Points) ---------- */
+.ha-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  transition: var(--transition);
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.ha-action-btn:active {
+  transform: scale(0.96);
+}
+
+.ha-btn-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.1px;
+  white-space: nowrap;
+  transition: var(--transition);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------- Icon circle ---------- */
+.ha-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #fff;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.ha-icon-red {
+  background: #dc2626;
+}
+
+.ha-icon-blue {
+  background: #2563eb;
+}
+
+/* ---------- Icon only buttons (WhatsApp / Call) ---------- */
+.ha-icon-only-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.ha-icon-only-btn:active {
+  transform: scale(0.92);
+}
+
+.ha-icon-whatsapp {
+  background: #25d366;
+}
+
+.ha-icon-call {
+  background: #ef4444;
+}
+
+/* ============================================
+   RESPONSIVE — Mobile First
+   ============================================ */
+
+/* ---------- Extra Small (<360px) ---------- */
+@media (max-width: 359px) {
+  .ha-wrapper {
+    padding: 8px 10px 12px;
+  }
+  .ha-actions {
+    gap: 4px;
+  }
+  .ha-action-btn {
+    gap: 4px;
+    padding: 0;
+  }
+  .ha-btn-label {
+    font-size: 10px;
+  }
+  .ha-btn-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .ha-btn-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+  .ha-icon-only-btn {
+    width: 30px;
+    height: 30px;
+  }
+  .ha-icon-only-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* ---------- Small Phone (360px - 420px) — iPhone 16, 14, etc. ---------- */
+@media (min-width: 360px) and (max-width: 420px) {
+  .ha-wrapper {
+    padding: 10px 12px 14px;
+  }
+  .ha-actions {
+    gap: 6px;
+  }
+  .ha-action-btn {
+    gap: 5px;
+  }
+  .ha-btn-label {
+    font-size: 12px;
+  }
+  .ha-btn-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .ha-btn-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  .ha-icon-only-btn {
+    width: 34px;
+    height: 34px;
+  }
+  .ha-icon-only-btn svg {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+/* ---------- Large Phone (421px - 520px) ---------- */
+@media (min-width: 421px) and (max-width: 520px) {
+  .ha-wrapper {
+    padding: 12px 14px 16px;
+  }
+  .ha-actions {
+    gap: 10px;
+  }
+  .ha-btn-label {
+    font-size: 13px;
+  }
+  .ha-btn-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .ha-icon-only-btn {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* ---------- Tablet (768px+) ---------- */
+@media (min-width: 768px) {
+  .ha-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px 24px 20px;
+  }
+  .ha-actions {
+    gap: 14px;
+  }
+  .ha-btn-label {
+    font-size: 15px;
+  }
+  .ha-btn-icon {
+    width: 42px;
+    height: 42px;
+  }
+  .ha-icon-only-btn {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+/* ---------- Desktop (1024px+) ---------- */
+@media (min-width: 1024px) {
+  .ha-wrapper {
+    max-width: 1000px;
+    padding: 18px 32px 22px;
+  }
+  .ha-btn-label {
+    font-size: 16px;
+  }
+  .ha-btn-icon {
+    width: 44px;
+    height: 44px;
+  }
+  .ha-icon-only-btn {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* ---------- Landscape (Mobile) ---------- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .ha-wrapper {
+    padding: 6px 12px 10px;
+  }
+  .ha-actions {
+    gap: 8px;
+  }
+  .ha-btn-label {
+    font-size: 12px;
+  }
+  .ha-btn-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .ha-icon-only-btn {
+    width: 32px;
+    height: 32px;
+  }
+}

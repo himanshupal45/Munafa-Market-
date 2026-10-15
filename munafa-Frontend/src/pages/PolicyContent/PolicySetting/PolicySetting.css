@@ -1,0 +1,311 @@
+
+/* ========================================
+   SETTINGS PAGES
+   ======================================== */
+.st-page {
+  padding: 24px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: stFadeIn 0.5s ease;
+}
+
+@keyframes stFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================
+   BREADCRUMB
+   ======================================== */
+.st-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.st-breadcrumb-sep { opacity: 0.5; }
+
+/* ========================================
+   ✅ PAGE TITLE WITH ICON
+   ======================================== */
+.st-page-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px 0;
+}
+
+.st-page-title-icon {
+  color: var(--accent-orange);
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+
+
+.st-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ========================================
+   CARD WRAPPER
+   ======================================== */
+.st-card-wrapper {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.st-card-wrapper-wide {
+  max-width: 1000px;
+}
+
+/* ========================================
+   CARD
+   ======================================== */
+.st-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ✅ Card Header — Orange Gradient (Your Theme) */
+.st-card-header {
+  padding: 14px 24px;
+  background: var(--accent-orange-gradient);
+}
+
+.st-header-green,
+.st-header-blue {
+  background: var(--accent-orange-gradient);
+}
+
+.st-card-title {
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: var(--text-white);
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Card Body */
+.st-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ========================================
+   FORM GROUP
+   ======================================== */
+.st-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.st-label {
+  font-size: var(--font-md);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.st-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-md);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  outline: none;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.st-input:focus {
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
+}
+
+.st-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* ========================================
+   ACTIONS
+   ======================================== */
+.st-actions {
+  display: flex;
+  padding-top: 4px;
+}
+
+.st-actions-right { justify-content: flex-end; }
+.st-actions-left  { justify-content: flex-start; }
+
+/* ✅ Submit Button — Orange Gradient (Your Theme) */
+.st-submit-btn {
+  padding: 10px 28px;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: inherit;
+  color: var(--text-white);
+  min-width: 100px;
+  background: var(--accent-orange-gradient);
+}
+
+/* Both green & blue variants use orange now */
+.st-submit-green,
+.st-submit-blue {
+  background: var(--accent-orange-gradient);
+}
+
+.st-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-orange);
+}
+
+.st-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   RICH TEXT EDITOR
+   ======================================== */
+.st-editor-wrapper {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg-card);
+}
+
+.st-editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-input);
+  flex-wrap: wrap;
+}
+
+.st-toolbar-btn {
+  min-width: 32px;
+  height: 30px;
+  padding: 0 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.st-toolbar-btn:hover {
+  background: var(--bg-card);
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+}
+
+.st-toolbar-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border-color);
+  margin: 0 4px;
+}
+
+.st-editor-content {
+  min-height: 200px;
+  padding: 16px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: var(--font-md);
+  line-height: 1.7;
+  outline: none;
+  overflow-y: auto;
+}
+
+.st-editor-content:focus {
+  background: var(--bg-card);
+}
+
+.st-editor-content a {
+  color: var(--accent-orange);
+  text-decoration: underline;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 600px) {
+  .st-page {
+    padding: 16px 12px;
+  }
+
+  .st-page-title {
+    font-size: 20px;
+  }
+
+  .st-page-title-icon {
+    font-size: 22px;
+  }
+
+  .st-breadcrumb {
+    justify-content: flex-start;
+  }
+
+  .st-card-body {
+    padding: 16px;
+  }
+
+  .st-submit-btn {
+    width: 100%;
+  }
+
+  .st-actions-right {
+    justify-content: stretch;
+  }
+
+  .st-editor-toolbar {
+    gap: 2px;
+  }
+
+  .st-toolbar-btn {
+    min-width: 28px;
+    height: 28px;
+    padding: 0 6px;
+    font-size: 12px;
+  }
+}
+
+/* ========================================
+   PRINT
+   ======================================== */
+@media print {
+  .st-actions,
+  .st-breadcrumb,
+  .st-editor-toolbar {
+    display: none !important;
+  }
+}

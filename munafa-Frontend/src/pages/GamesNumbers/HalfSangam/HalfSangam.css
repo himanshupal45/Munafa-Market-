@@ -1,0 +1,291 @@
+
+/* ========================================
+   HALF SANGAM PAGE
+   ======================================== */
+.hs-page {
+  padding: 24px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: hsFadeIn 0.5s ease;
+}
+
+@keyframes hsFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================
+   BREADCRUMB
+   ======================================== */
+.hs-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.hs-breadcrumb-sep { opacity: 0.5; }
+
+/* ========================================
+   PAGE TITLE WITH ICON
+   ======================================== */
+.hs-page-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px 0;
+}
+
+.hs-page-title-icon {
+  color: var(--accent-orange);
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+
+
+.hs-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ========================================
+   MAIN CARD
+   ======================================== */
+.hs-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ========================================
+   SECTION (OpenAnk / ClosePana)
+   ======================================== */
+.hs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Section Header (Red Bar) */
+.hs-section-header {
+  background: #c0392b;
+  color: #ffffff;
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.hs-section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================
+   OPENANK GRID (Digits 0-9)
+   ======================================== */
+.hs-anks-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  padding: 8px 4px;
+  justify-content: flex-start;
+}
+
+.hs-ank-box {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-orange-gradient);
+  color: var(--text-white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 20px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.hs-ank-box:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: var(--shadow-orange);
+}
+
+.hs-ank-box:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* ========================================
+   CLOSEPANA GRID (Grid layout)
+   ======================================== */
+.hs-panas-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.hs-pana-box {
+  min-width: 62px;
+  height: 46px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-orange-gradient);
+  color: var(--text-white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  letter-spacing: 0.5px;
+}
+
+.hs-pana-box:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-orange);
+  z-index: 2;
+}
+
+.hs-pana-box:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1280px) {
+  .hs-panas-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hs-panas-grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 12px;
+  }
+
+  .hs-pana-box {
+    min-width: 54px;
+    height: 42px;
+    font-size: 14px;
+  }
+
+  .hs-section-title { font-size: 20px; }
+
+  .hs-anks-grid { gap: 18px; }
+  .hs-ank-box { width: 48px; height: 48px; font-size: 18px; }
+}
+
+@media (max-width: 768px) {
+  .hs-panas-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+  }
+
+  .hs-pana-box {
+    min-width: 48px;
+    height: 40px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hs-page {
+    padding: 16px 12px;
+  }
+
+  .hs-page-title {
+    font-size: 20px;
+  }
+
+  .hs-page-title-icon {
+    font-size: 22px;
+  }
+
+  .hs-breadcrumb {
+    justify-content: flex-start;
+  }
+
+  .hs-card {
+    padding: 14px;
+    gap: 18px;
+  }
+
+  .hs-section-header {
+    padding: 10px 14px;
+  }
+
+  .hs-section-title { font-size: 18px; }
+
+  .hs-anks-grid { gap: 12px; }
+  .hs-ank-box {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+    border-radius: 6px;
+  }
+
+  .hs-panas-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .hs-pana-box {
+    min-width: 100%;
+    height: 36px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hs-panas-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .hs-ank-box { width: 38px; height: 38px; font-size: 14px; }
+  .hs-pana-box { height: 34px; font-size: 11px; }
+}
+
+/* ========================================
+   PRINT
+   ======================================== */
+@media print {
+  .hs-breadcrumb {
+    display: none !important;
+  }
+
+  .hs-page {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}

@@ -1,0 +1,399 @@
+/* ========================================
+   QR UPI VERIFICATION PAGE
+   ======================================== */
+.qr-page {
+  padding: 24px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: qrFadeIn 0.5s ease;
+}
+
+@keyframes qrFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================
+   BREADCRUMB
+   ======================================== */
+.qr-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.qr-breadcrumb-sep { opacity: 0.5; }
+
+/* ========================================
+   PAGE TITLE
+   ======================================== */
+.qr-page-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px 0;
+}
+
+.qr-page-title-icon {
+  color: var(--accent-orange);
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+
+.qr-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ========================================
+   CARD
+   ======================================== */
+.qr-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Top Button */
+.qr-card-top {
+  margin-bottom: 20px;
+}
+
+.qr-deposit-btn {
+  padding: 10px 20px;
+  background: var(--accent-orange-gradient);
+  color: var(--text-white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.qr-deposit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-orange);
+}
+
+.qr-deposit-btn:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   TOOLBAR
+   ======================================== */
+.qr-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.qr-toolbar-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.qr-toolbar-btn {
+  padding: 7px 16px;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.qr-toolbar-btn:hover {
+  background: var(--accent-orange);
+  color: var(--text-white);
+  border-color: var(--accent-orange);
+  transform: translateY(-1px);
+}
+
+.qr-toolbar-btn:active {
+  transform: translateY(0);
+}
+
+.qr-toolbar-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-md);
+  color: var(--text-secondary);
+}
+
+.qr-search-input {
+  padding: 7px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-md);
+  outline: none;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  width: 200px;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.qr-search-input:focus {
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
+}
+
+/* ========================================
+   TABLE
+   ======================================== */
+.qr-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+}
+
+.qr-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-md);
+}
+
+.qr-table thead {
+  background: var(--bg-input);
+}
+
+.qr-table th {
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 700;
+  font-size: var(--font-sm);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.qr-table td {
+  padding: 12px 14px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.qr-table tbody tr {
+  transition: var(--transition-fast);
+}
+
+.qr-table tbody tr:hover {
+  background: var(--bg-input);
+}
+
+.qr-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.qr-table-empty {
+  text-align: center !important;
+  padding: 30px 14px !important;
+  color: var(--text-muted);
+  background: var(--bg-input);
+}
+
+/* ========================================
+   PAYMENT SCREENSHOT
+   ======================================== */
+.qr-screenshot-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-screenshot-wrapper {
+  width: 140px;
+  height: 90px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.qr-screenshot-wrapper:hover {
+  border-color: var(--accent-orange);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+.qr-screenshot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ========================================
+   ACTION BUTTONS
+   ======================================== */
+.qr-action-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.qr-action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.qr-approve-btn {
+  color: var(--success);
+}
+.qr-approve-btn:hover {
+  background: var(--success);
+  color: var(--text-white);
+  border-color: var(--success);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.qr-reject-btn {
+  color: var(--danger);
+}
+.qr-reject-btn:hover {
+  background: var(--danger);
+  color: var(--text-white);
+  border-color: var(--danger);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* ========================================
+   PAGINATION
+   ======================================== */
+.qr-pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.qr-page-btn {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-input);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: var(--font-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.qr-page-btn:hover {
+  background: var(--bg-card);
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+}
+
+.qr-page-btn.active {
+  background: #8b5cf6;
+  color: #ffffff;
+  border-color: #8b5cf6;
+  font-weight: 700;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 600px) {
+  .qr-page {
+    padding: 16px 12px;
+  }
+
+  .qr-page-title {
+    font-size: 18px;
+  }
+
+  .qr-page-title-icon {
+    font-size: 22px;
+  }
+
+  .qr-breadcrumb {
+    justify-content: flex-start;
+  }
+
+  .qr-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .qr-toolbar-search {
+    justify-content: flex-end;
+  }
+
+  .qr-search-input {
+    width: 100%;
+  }
+
+  .qr-table th,
+  .qr-table td {
+    padding: 10px;
+    font-size: var(--font-sm);
+  }
+
+  .qr-screenshot-wrapper {
+    width: 100px;
+    height: 70px;
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+  .qr-toolbar,
+  .qr-pagination,
+  .qr-breadcrumb,
+  .qr-card-top,
+  .qr-action-buttons {
+    display: none !important;
+  }
+
+  .qr-page {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}

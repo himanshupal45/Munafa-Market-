@@ -1,0 +1,577 @@
+/* =============================================
+   LOGIN PAGE — Uses Global CSS Variables
+   ============================================= */
+
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(160deg, var(--bg) 0%, var(--bg2) 60%, var(--bg) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+/* Background blobs */
+.login-page::before,
+.login-page::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.login-page::before {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, var(--orange-bg), transparent 70%);
+  top: -80px;
+  right: -80px;
+  animation: blobFloat 18s ease-in-out infinite;
+}
+
+.login-page::after {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, var(--orange-bg), transparent 70%);
+  bottom: -60px;
+  left: -60px;
+  animation: blobFloat 22s ease-in-out infinite reverse;
+}
+
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(20px, -20px) scale(1.05); }
+  66%      { transform: translate(-15px, 15px) scale(0.95); }
+}
+
+/* =============================================
+   BRAND
+   ============================================= */
+
+.login-brand {
+  text-align: center;
+  margin-bottom: 32px;
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.login-brand-icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--orange-g);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  font-size: 34px;
+  box-shadow: 0 8px 32px var(--orange-bg);
+}
+
+.login-brand-title {
+  font-size: clamp(22px, 5vw, 28px);
+  font-weight: 800;
+  color: var(--orange);
+  letter-spacing: 0.5px;
+}
+
+.login-brand-sub {
+  color: var(--text3);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* =============================================
+   CARD
+   ============================================= */
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: clamp(20px, 5vw, 32px);
+  animation: fadeUp 0.55s ease 0.1s both;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.login-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+/* =============================================
+   ERROR
+   ============================================= */
+
+.login-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--r-md);
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  color: var(--red);
+  font-size: 13px;
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%      { transform: translateX(-6px); }
+  75%      { transform: translateX(6px); }
+}
+
+/* =============================================
+   FIELD
+   ============================================= */
+
+.login-field {
+  margin-bottom: 14px;
+}
+
+.login-label {
+  display: block;
+  font-size: 12px;
+  color: var(--text2);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.login-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login-input-icon {
+  position: absolute;
+  left: 13px;
+  color: var(--icon);
+  pointer-events: none;
+  display: flex;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  background: var(--bg2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  color: var(--text);
+  font-size: 15px;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.login-input:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px var(--orange-bg);
+  outline: none;
+}
+
+.login-input::placeholder {
+  color: var(--text3);
+}
+
+.login-eye {
+  position: absolute;
+  right: 12px;
+  color: var(--text3);
+  padding: 4px;
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.login-eye:hover {
+  color: var(--text2);
+}
+
+/* =============================================
+   SUBMIT BUTTON
+   ============================================= */
+
+.login-submit {
+  width: 100%;
+  padding: 14px;
+  background: var(--orange-g);
+  border: none;
+  border-radius: var(--r-md);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px var(--orange-bg);
+  transition: var(--transition);
+}
+
+.login-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px var(--orange-bg);
+}
+
+.login-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+
+.login-footer {
+  text-align: center;
+  margin-top: 18px;
+  color: var(--text3);
+  font-size: 13px;
+}
+
+.login-footer a {
+  color: var(--orange);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* =============================================
+   LOGIN SPLASH SCREEN
+   ============================================= */
+
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, var(--bg) 0%, var(--bg2) 50%, var(--bg) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  overflow: hidden;
+  animation: splashIn 0.4s ease;
+  transition: var(--transition);
+}
+
+@keyframes splashIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.splash-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, var(--orange-bg) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1);   opacity: 0.5; }
+  50%      { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+}
+
+.splash-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: fadeUp 0.7s ease;
+}
+
+.splash-ring {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(var(--orange), var(--orange2), var(--orange));
+  padding: 5px;
+  margin: 0 auto 28px;
+  animation: ringRotate 3s linear infinite;
+  box-shadow: 0 0 50px var(--orange-bg);
+}
+
+@keyframes ringRotate {
+  to { transform: rotate(360deg); }
+}
+
+.splash-ring-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--bg2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.splash-title {
+  font-size: clamp(28px, 7vw, 38px);
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+.splash-title span:first-child {
+  color: var(--orange);
+}
+
+.splash-title span:last-child {
+  color: var(--text);
+  margin-left: 8px;
+}
+
+.splash-sub {
+  color: var(--text3);
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+/* Progress */
+.splash-progress-wrap {
+  width: 220px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 4px;
+  margin: 0 auto 18px;
+  overflow: hidden;
+}
+
+.splash-progress-bar {
+  height: 100%;
+  background: var(--orange-g);
+  border-radius: 4px;
+  animation: progressFill 3s linear forwards;
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+/* Dots */
+.splash-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.splash-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--orange);
+  animation: dotBounce 1.4s ease-in-out infinite;
+}
+
+.splash-dot:nth-child(2) { animation-delay: 0.2s; }
+.splash-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dotBounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.3; }
+  40%           { transform: scale(1);   opacity: 1; }
+}
+
+/* =============================================
+   FLOATING PARTICLES
+   ============================================= */
+
+.splash-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.splash-particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--orange);
+  opacity: 0.6;
+  animation: particleFloat 4s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+  0%, 100% { transform: translateY(0)     scale(1);   opacity: 0.3; }
+  50%      { transform: translateY(-40px) scale(1.5); opacity: 1; }
+}
+
+.splash-particle:nth-child(1)  { left: 10%; top: 20%; animation-delay: 0s; }
+.splash-particle:nth-child(2)  { left: 20%; top: 40%; animation-delay: 0.3s; }
+.splash-particle:nth-child(3)  { left: 30%; top: 10%; animation-delay: 0.6s; }
+.splash-particle:nth-child(4)  { left: 40%; top: 60%; animation-delay: 0.9s; }
+.splash-particle:nth-child(5)  { left: 50%; top: 30%; animation-delay: 1.2s; }
+.splash-particle:nth-child(6)  { left: 60%; top: 70%; animation-delay: 1.5s; }
+.splash-particle:nth-child(7)  { left: 70%; top: 15%; animation-delay: 1.8s; }
+.splash-particle:nth-child(8)  { left: 80%; top: 50%; animation-delay: 2.1s; }
+.splash-particle:nth-child(9)  { left: 90%; top: 25%; animation-delay: 2.4s; }
+.splash-particle:nth-child(10) { left: 15%; top: 80%; animation-delay: 0.5s; }
+.splash-particle:nth-child(11) { left: 25%; top: 5%;  animation-delay: 0.8s; }
+.splash-particle:nth-child(12) { left: 35%; top: 55%; animation-delay: 1.1s; }
+.splash-particle:nth-child(13) { left: 45%; top: 35%; animation-delay: 1.4s; }
+.splash-particle:nth-child(14) { left: 55%; top: 85%; animation-delay: 1.7s; }
+.splash-particle:nth-child(15) { left: 65%; top: 45%; animation-delay: 2s; }
+.splash-particle:nth-child(16) { left: 75%; top: 65%; animation-delay: 2.3s; }
+.splash-particle:nth-child(17) { left: 85%; top: 12%; animation-delay: 2.6s; }
+.splash-particle:nth-child(18) { left: 5%;  top: 90%; animation-delay: 0.2s; }
+.splash-particle:nth-child(19) { left: 92%; top: 3%;  animation-delay: 2.2s; }
+.splash-particle:nth-child(20) { left: 48%; top: 52%; animation-delay: 1s; }
+
+/* Floating coins */
+.splash-coins {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.splash-coin {
+  position: absolute;
+  color: var(--orange);
+  opacity: 0.3;
+  animation: coinFloat 5s ease-in-out infinite;
+}
+
+@keyframes coinFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-25px) rotate(180deg); }
+}
+
+.splash-coin:nth-child(1) { top: 10%;    left: 5%;   animation-delay: 0s; }
+.splash-coin:nth-child(2) { top: 20%;    right: 10%; animation-delay: 1s; }
+.splash-coin:nth-child(3) { bottom: 30%; left: 15%;  animation-delay: 2s; }
+.splash-coin:nth-child(4) { bottom: 20%; right: 5%;  animation-delay: 1.5s; }
+.splash-coin:nth-child(5) { top: 40%;    left: 20%;  animation-delay: 0.5s; }
+.splash-coin:nth-child(6) { bottom: 10%; right: 20%; animation-delay: 2.5s; }
+
+.splash-footer {
+  position: absolute;
+  bottom: 24px;
+  color: var(--text3);
+  font-size: 11px;
+  letter-spacing: 2px;
+  z-index: 2;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 400px) {
+  .login-card {
+    padding: 20px 16px;
+    border-radius: var(--r-lg);
+  }
+  .login-brand-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
+  }
+  .login-submit {
+    padding: 13px;
+    font-size: 15px;
+  }
+}
+
+/* =============================================
+   REDUCED MOTION
+   ============================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .login-page::before,
+  .login-page::after,
+  .splash-glow,
+  .splash-ring,
+  .splash-particle,
+  .splash-coin,
+  .splash-dot,
+  .splash-progress-bar {
+    animation: none;
+  }
+
+  .login-card,
+  .login-brand,
+  .splash-content,
+  .splash-screen {
+    animation: none;
+  }
+}
+/* =============================================
+   BRAND ICON — Logo Image
+   ============================================= */
+
+.login-brand-icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--orange-g);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  overflow: hidden;              /* ✅ Image circle mein rahe */
+  box-shadow: 0 8px 32px var(--orange-bg);
+  padding: 0;
+  font-size: 0;                  /* ✅ Emoji size remove */
+}
+
+.login-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+/* =============================================
+   LOGIN FIELD LAST (Bottom Margin)
+   ============================================= */
+
+.login-field-last {
+  margin-bottom: 20px;
+}
+
+/* =============================================
+   SPLASH SCREEN — Logo & Coins
+   ============================================= */
+
+.splash-logo-img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+}
+
+.splash-logo-fallback {
+  font-size: 38px;
+  line-height: 1;
+}
+
+/* Coin sizes */
+.splash-coin.coin-xs { font-size: 16px; }
+.splash-coin.coin-sm { font-size: 18px; }
+.splash-coin.coin-md { font-size: 22px; }
+.splash-coin.coin-lg { font-size: 28px; }

@@ -1,0 +1,248 @@
+
+/* ========================================
+   SINGLE PANA PAGE
+   ======================================== */
+.sp-page {
+  padding: 24px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: spFadeIn 0.5s ease;
+}
+
+@keyframes spFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================
+   BREADCRUMB
+   ======================================== */
+.sp-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.sp-breadcrumb-sep { opacity: 0.5; }
+
+/* ========================================
+   PAGE TITLE WITH ICON
+   ======================================== */
+.sp-page-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px 0;
+}
+
+.sp-page-title-icon {
+  color: var(--accent-orange);
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+
+.sp-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ========================================
+   MAIN CARD
+   ======================================== */
+.sp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ========================================
+   PANA GROUP
+   ======================================== */
+.sp-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Digit Header (Red Bar) */
+.sp-digit-header {
+  background: #c0392b;
+  color: #ffffff;
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.sp-digit-number {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+/* ========================================
+   PANAS GRID (Below each digit)
+   ======================================== */
+.sp-panas-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+  align-items: center;
+  padding: 4px 0;
+}
+
+/* Pana Box */
+.sp-pana-box {
+  min-width: 62px;
+  height: 48px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-orange-gradient);
+  color: var(--text-white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  letter-spacing: 0.5px;
+}
+
+.sp-pana-box:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-orange);
+  z-index: 2;
+}
+
+.sp-pana-box:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1280px) {
+  .sp-panas-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .sp-panas-grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 12px;
+  }
+
+  .sp-pana-box {
+    min-width: 54px;
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .sp-digit-number {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sp-panas-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+  }
+
+  .sp-pana-box {
+    min-width: 48px;
+    height: 40px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sp-page {
+    padding: 16px 12px;
+  }
+
+  .sp-page-title {
+    font-size: 20px;
+  }
+
+  .sp-page-title-icon {
+    font-size: 22px;
+  }
+
+  .sp-breadcrumb {
+    justify-content: flex-start;
+  }
+
+  .sp-card {
+    padding: 14px;
+    gap: 16px;
+  }
+
+  .sp-digit-header {
+    padding: 10px 14px;
+  }
+
+  .sp-digit-number {
+    font-size: 20px;
+  }
+
+  .sp-panas-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .sp-pana-box {
+    min-width: 100%;
+    height: 36px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 400px) {
+  .sp-panas-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .sp-pana-box {
+    height: 34px;
+    font-size: 11px;
+  }
+}
+
+/* ========================================
+   PRINT
+   ======================================== */
+@media print {
+  .sp-breadcrumb {
+    display: none !important;
+  }
+
+  .sp-page {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}

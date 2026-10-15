@@ -1,0 +1,214 @@
+
+/* ========================================
+   DISAWAR GAME RATES PAGE
+   ======================================== */
+.dgr-page {
+  padding: 24px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: dgrFadeIn 0.5s ease;
+}
+
+@keyframes dgrFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Breadcrumb */
+.dgr-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.dgr-breadcrumb-sep { opacity: 0.5; }
+
+/* Page Title */
+.dgr-page-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px 0;
+}
+
+.dgr-page-title-icon {
+  color: var(--accent-orange);
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+
+
+.dgr-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ========================================
+   CARD WRAPPER
+   ======================================== */
+.dgr-card-wrapper {
+  max-width: 100%;
+}
+
+.dgr-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Card Header */
+.dgr-card-header {
+  padding: 14px 24px;
+  background: var(--accent-orange-gradient);
+}
+
+.dgr-card-title {
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: var(--text-white);
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Card Body */
+.dgr-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ========================================
+   FORM GROUP
+   ======================================== */
+.dgr-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dgr-label {
+  font-size: var(--font-md);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.dgr-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-md);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  outline: none;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.dgr-input:focus {
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
+}
+
+.dgr-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Hide number input spinners */
+.dgr-input::-webkit-outer-spin-button,
+.dgr-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.dgr-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ========================================
+   SUBMIT BUTTON
+   ======================================== */
+.dgr-actions {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 8px;
+}
+
+.dgr-submit-btn {
+  padding: 12px 32px;
+  background: var(--accent-orange-gradient);
+  color: var(--text-white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: inherit;
+  min-width: 110px;
+}
+
+.dgr-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-orange);
+}
+
+.dgr-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 600px) {
+  .dgr-page {
+    padding: 16px 12px;
+  }
+
+  .dgr-page-title {
+    font-size: 20px;
+  }
+
+  .dgr-page-title-icon {
+    font-size: 22px;
+  }
+
+  .dgr-breadcrumb {
+    justify-content: flex-start;
+  }
+
+  .dgr-card-body {
+    padding: 16px;
+  }
+
+  .dgr-submit-btn {
+    width: 100%;
+  }
+}
+
+/* ========================================
+   PRINT
+   ======================================== */
+@media print {
+  .dgr-breadcrumb,
+  .dgr-actions {
+    display: none !important;
+  }
+
+  .dgr-page {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}

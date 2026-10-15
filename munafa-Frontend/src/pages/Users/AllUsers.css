@@ -1,0 +1,592 @@
+@import "../../styles/variables.css";
+
+/* ========================================
+   USERS PAGE — Admin Panel Style
+   ======================================== */
+.users-page {
+  padding: 24px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: usersFadeIn 0.5s ease;
+}
+
+@keyframes usersFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   BREADCRUMB
+   ======================================== */
+.users-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.users-breadcrumb svg {
+  color: var(--text-muted);
+}
+
+.breadcrumb-sep {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+/* ========================================
+   PAGE TITLE
+   ======================================== */
+.users-page-title {
+  font-size: var(--font-2xl);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0 0 20px 0;
+  letter-spacing: 0.3px;
+}
+
+/* ========================================
+   TABS
+   ======================================== */
+.users-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.users-tab-btn {
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-md);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-family: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.users-tab-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 107, 0, 0.15);
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease;
+}
+
+.users-tab-btn:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
+.users-tab-btn:hover {
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+}
+
+.users-tab-btn.active {
+  background: var(--bg-card);
+  color: var(--accent-orange);
+  border: 2px solid var(--accent-orange);
+  font-weight: 600;
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+}
+
+/* ========================================
+   TOOLBAR
+   ======================================== */
+.users-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 14px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
+}
+
+.users-toolbar:hover {
+  border-color: var(--accent-orange);
+  box-shadow: var(--shadow-sm);
+}
+
+.users-toolbar-left {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.users-toolbar-btn {
+  padding: 8px 16px;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.users-toolbar-btn:hover {
+  background: var(--accent-orange);
+  color: var(--text-white);
+  border-color: var(--accent-orange);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-orange);
+}
+
+.users-toolbar-btn:active {
+  transform: translateY(0);
+}
+
+.users-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.users-search-label {
+  font-size: var(--font-md);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.users-search-input {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-md);
+  outline: none;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  width: 200px;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.users-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.users-search-input:focus {
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
+}
+
+/* ========================================
+   TABLE
+   ======================================== */
+.users-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  margin-bottom: 16px;
+}
+
+.users-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-md);
+}
+
+.users-data-table thead {
+  background: var(--bg-input);
+}
+
+.users-data-table th {
+  padding: 14px;
+  text-align: left;
+  font-weight: 600;
+  font-size: var(--font-sm);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.users-data-table td {
+  padding: 14px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.users-data-table tbody tr {
+  transition: var(--transition-fast);
+}
+
+.users-data-table tbody tr:hover {
+  background: var(--bg-input);
+}
+
+.users-data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.user-name-cell {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.user-password-cell {
+  font-family: 'Courier New', monospace;
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+
+.users-table-empty {
+  text-align: center !important;
+  padding: 40px 14px !important;
+  color: var(--text-muted);
+  background: var(--bg-input);
+}
+
+/* ========================================
+   TOGGLE SWITCH (Orange Theme)
+   ======================================== */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--border-color);
+  transition: 0.3s;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--text-white);
+  transition: 0.3s;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background: var(--accent-orange-gradient);
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 12px rgba(255, 107, 0, 0.3);
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+  transform: translateX(20px);
+}
+
+.toggle-switch:hover .toggle-slider {
+  border-color: var(--accent-orange);
+}
+
+/* ========================================
+   VIEW BUTTON
+   ======================================== */
+.user-view-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: var(--accent-orange-gradient);
+  color: var(--text-white);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.user-view-btn:hover {
+  transform: scale(1.08);
+  box-shadow: var(--shadow-orange);
+}
+
+.user-view-btn:active {
+  transform: scale(0.95);
+}
+
+/* ========================================
+   PAGINATION
+   ======================================== */
+.users-pagination-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 4px 0;
+}
+
+.users-pagination {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.users-page-btn {
+  min-width: 34px;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-input);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: var(--font-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.users-page-btn:hover:not(:disabled) {
+  background: var(--bg-card);
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+  transform: translateY(-1px);
+}
+
+.users-page-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.users-page-btn.active {
+  background: var(--accent-orange-gradient);
+  color: var(--text-white);
+  border-color: var(--accent-orange);
+  font-weight: 700;
+  box-shadow: var(--shadow-orange);
+}
+
+.users-page-btn.active:hover {
+  transform: translateY(-1px);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .users-page {
+    padding: 16px 14px 30px;
+  }
+
+  .users-page-title {
+    font-size: var(--font-xl);
+  }
+
+  .users-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .users-toolbar-left {
+    justify-content: flex-start;
+  }
+
+  .users-toolbar-right {
+    justify-content: flex-end;
+  }
+
+  .users-search-input {
+    width: 100%;
+  }
+
+  .users-data-table th,
+  .users-data-table td {
+    padding: 10px;
+    font-size: var(--font-sm);
+  }
+
+  .users-breadcrumb {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .users-page {
+    padding: 12px 10px 24px;
+  }
+
+  .users-tab-btn {
+    padding: 8px 14px;
+    font-size: var(--font-sm);
+  }
+
+  .users-toolbar-btn {
+    padding: 6px 10px;
+    font-size: var(--font-xs);
+  }
+
+  .users-page-btn {
+    min-width: 30px;
+    height: 30px;
+    font-size: var(--font-xs);
+  }
+}
+
+/* ========================================
+   DARK THEME (Optional Override)
+   ======================================== */
+.users-page.dark {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.users-page.dark .users-toolbar,
+.users-page.dark .users-table-wrapper {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+.users-page.dark .users-data-table thead {
+  background: var(--bg-input);
+}
+
+.users-page.dark .users-data-table th {
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.users-page.dark .users-data-table td {
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+}
+
+.users-page.dark .users-data-table tbody tr:hover {
+  background: var(--bg-input);
+}
+
+.users-page.dark .user-name-cell {
+  color: var(--text-primary);
+}
+
+.users-page.dark .user-password-cell {
+  color: var(--text-secondary);
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+  .users-toolbar,
+  .users-pagination-wrapper,
+  .users-breadcrumb {
+    display: none !important;
+  }
+
+  .users-page {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .users-data-table th,
+  .users-data-table td {
+    color: #000 !important;
+    border-color: #ddd !important;
+  }
+}
+/* ========================================
+   ✅ PAGE TITLE WITH ICON
+   ======================================== */
+.users-page-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px 0;
+}
+
+.users-page-title-icon {
+  color: var(--accent-orange);
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+
+
+.users-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+/* ========================================
+   TAB COUNT BADGE
+   ======================================== */
+.users-tab-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.users-tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 7px;
+  background: var(--bg-input);
+  color: var(--text-secondary);
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+  transition: var(--transition-fast);
+}
+
+.users-tab-btn.active .users-tab-count {
+  background: var(--accent-orange);
+  color: var(--text-white);
+}

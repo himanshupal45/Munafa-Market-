@@ -1,0 +1,221 @@
+
+/* ========================================
+   JODI DIGITS PAGE
+   ======================================== */
+.jd-page {
+  padding: 24px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: jdFadeIn 0.5s ease;
+}
+
+@keyframes jdFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================
+   BREADCRUMB
+   ======================================== */
+.jd-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.jd-breadcrumb-sep { opacity: 0.5; }
+
+/* ========================================
+   PAGE TITLE WITH ICON
+   ======================================== */
+.jd-page-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px 0;
+}
+
+.jd-page-title-icon {
+  color: var(--accent-orange);
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+
+
+.jd-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ========================================
+   MAIN CARD
+   ======================================== */
+.jd-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.jd-card-title {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 24px 0;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* ========================================
+   JODI DIGITS GRID (00-99)
+   ======================================== */
+.jd-digits-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 0;
+}
+
+/* Jodi Digit Box */
+.jd-digit-box {
+  min-width: 62px;
+  height: 56px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-orange-gradient);
+  color: var(--text-white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 20px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  letter-spacing: 0.5px;
+}
+
+.jd-digit-box:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: var(--shadow-orange);
+  z-index: 2;
+}
+
+.jd-digit-box:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1280px) {
+  .jd-digits-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .jd-digits-grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 16px;
+  }
+
+  .jd-digit-box {
+    min-width: 54px;
+    height: 50px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .jd-digits-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+  }
+
+  .jd-digit-box {
+    min-width: 48px;
+    height: 46px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .jd-page {
+    padding: 16px 12px;
+  }
+
+  .jd-page-title {
+    font-size: 20px;
+  }
+
+  .jd-page-title-icon {
+    font-size: 22px;
+  }
+
+  .jd-breadcrumb {
+    justify-content: flex-start;
+  }
+
+  .jd-card {
+    padding: 18px;
+  }
+
+  .jd-card-title {
+    font-size: var(--font-md);
+    margin-bottom: 18px;
+  }
+
+  .jd-digits-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+
+  .jd-digit-box {
+    min-width: 100%;
+    height: 42px;
+    font-size: 14px;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 400px) {
+  .jd-digits-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .jd-digit-box {
+    height: 38px;
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   PRINT
+   ======================================== */
+@media print {
+  .jd-breadcrumb {
+    display: none !important;
+  }
+
+  .jd-page {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}
